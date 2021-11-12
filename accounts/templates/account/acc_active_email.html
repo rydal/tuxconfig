@@ -1,0 +1,14 @@
+{% autoescape off %}
+<b>Dear {{ user.email }},</b>
+<p>Welcome to computers to schools.</p>
+{% if user.role == 1 %}
+    <p>Your email address has been registered via computers to schools as a school.</p>
+{%  else %}
+    <p>Your email address has been registered via computers to schools as a donor.</p>
+{%  endif %}
+<p>To confirm your subscription please click here:
+<a href="https://{{ domain }}{% url 'account:activate' uidb64=uid token=token %}">https://{{ domain }}{% url 'account:activate' uidb64=uid token=token %}</a>
+<br>
+<p>If you have not subscribed to this service please click this link to be removed from our system.</p>
+<a href="https://{{ domain }}{% url 'account:forget' uidb64=uid token=token %}">https://{{ domain }}{% url 'account:forget' uidb64=uid token=token %}</a>
+{% endautoescape %}

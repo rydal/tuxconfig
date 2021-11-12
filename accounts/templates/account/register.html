@@ -1,0 +1,37 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %}Create an account{% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+<i class="{{ country.flag_css }}"></i>
+{% block content %}
+  <h1>Create an account</h1>
+  <p>In order to use this service please register using the following form:</p>
+  <p>If you are registering as a teacher please do so using your school's email address.</p>
+  <form method="post">
+
+      <table>
+          {{  user_form | crispy }}
+      </table>
+      <i class="{{ country.flag_css }}"></i>
+      <link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+      Email addresses ending in {{  school_domains }} will automatically be registered as a school <accounts
+          class=""></accounts>
+
+      {% csrf_token %}
+    <p><input type="submit" class="btn btn-primary" value="Create my account"></p>
+  </form>
+    {% if schools_registered %}
+    <p><b>The following academies are registered with us:</b></p>
+    {% for school in schools_registered %}
+        <p>{{school.school_name}}</p>
+    {% endfor %}
+    {% endif %}
+    <p>teachers from these academies will also automatically be registered as a school.</p>
+    <b>Why do I need to register using my school address to receive computers?</b>
+    <p>This ensures that the computers go to schools and not fraudulent sites.</p>
+{% endblock %}

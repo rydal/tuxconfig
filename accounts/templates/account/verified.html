@@ -1,0 +1,14 @@
+{% extends "accounts/base.html" %}
+
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+{% block title %}Account verified.{% endblock %}
+
+
+{% block content %}
+        {%if success %}
+            <p class="alert-success alert">Email link verified. Please <a href="/accounts/login/">log in</a></p>
+        {%  else %}
+            <p class="alert-danger alert">Email link incorrect. Please check email or select "Password reset"</p>
+    {% endif %}
+{% endblock %}

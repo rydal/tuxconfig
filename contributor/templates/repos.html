@@ -1,0 +1,25 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %} My Take Out {% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Repo list</h3> {% endblock %}
+{% block content %}
+    <h4>Added repositories:</h4>
+    {%  for repo in live_repos %}
+        <p><b>{{  repo.git_url }}</b></p>
+        <p><b>{{  repo.git_commit }}</b></p>
+    {%  endfor %}
+    <h4>Available repositories:</h4>
+    <form method="post">
+    {%  for repo in repo_list %}
+        <p><b>{{  repo.html_url }}</b></p><button class="btn btn-primary" name="repository" value="{{ repo.html_url }}" type="submit">Import repository</button>
+    {%  endfor %}
+    {%  csrf_token %}
+    </form>
+
+{% endblock %}
