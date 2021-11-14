@@ -3684,3 +3684,180 @@ Traceback (most recent call last):
   File "/usr/lib/python3.8/urllib/request.py", line 649, in http_error_default
     raise HTTPError(req.full_url, code, msg, hdrs, fp)
 urllib.error.HTTPError: HTTP Error 403: rate limit exceeded
+WARNING:django.request:Not Found: /accounts/google/login/callback/
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/contributor/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /social/google/login/callback/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 77, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 147, in dispatch
+    return complete_social_login(request, login)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/helpers.py", line 151, in complete_social_login
+    return _complete_social_login(request, sociallogin)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/helpers.py", line 172, in _complete_social_login
+    ret = _process_signup(request, sociallogin)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/helpers.py", line 43, in _process_signup
+    ret = complete_social_signup(request, sociallogin)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/helpers.py", line 177, in complete_social_signup
+    return complete_signup(
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/account/utils.py", line 209, in complete_signup
+    return perform_login(
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/account/utils.py", line 185, in perform_login
+    signals.user_logged_in.send(
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/dispatch/dispatcher.py", line 180, in send
+    return [
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/dispatch/dispatcher.py", line 181, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/contributor/views.py", line 123, in login_github_user
+    socialuser = SocialAccount.objects.filter(user=user, provider="github")[0]
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/db/models/query.py", line 318, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/tuxconfig_django/__init__.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /social/google/login/callback/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 77, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 147, in dispatch
+    return complete_social_login(request, login)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/helpers.py", line 151, in complete_social_login
+    return _complete_social_login(request, sociallogin)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/helpers.py", line 166, in _complete_social_login
+    ret = _login_social_account(request, sociallogin)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/helpers.py", line 48, in _login_social_account
+    return perform_login(
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/account/utils.py", line 185, in perform_login
+    signals.user_logged_in.send(
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/dispatch/dispatcher.py", line 180, in send
+    return [
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/dispatch/dispatcher.py", line 181, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/contributor/views.py", line 132, in login_github_user
+    socialuser.groups.add(group)
+AttributeError: 'SocialAccount' object has no attribute 'groups'
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /social/google/login/callback/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 77, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 147, in dispatch
+    return complete_social_login(request, login)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/helpers.py", line 151, in complete_social_login
+    return _complete_social_login(request, sociallogin)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/helpers.py", line 166, in _complete_social_login
+    ret = _login_social_account(request, sociallogin)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/socialaccount/helpers.py", line 48, in _login_social_account
+    return perform_login(
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/allauth/account/utils.py", line 185, in perform_login
+    signals.user_logged_in.send(
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/dispatch/dispatcher.py", line 180, in send
+    return [
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/dispatch/dispatcher.py", line 181, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/contributor/views.py", line 132, in login_github_user
+    socialuser.groups.add(group)
+AttributeError: 'SocialAccount' object has no attribute 'groups'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/contributor/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /contributor/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/contributor/views.py", line 45, in profile
+    git_user_details = social_id.extra_data['url']
+KeyError: 'url'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/accounts/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /contributor/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/contributor/views.py", line 45, in profile
+    git_user_details = social_id.extra_data['url']
+KeyError: 'url'
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /accounts/profile/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/accounts/views.py", line 161, in profile
+    if len(request.user.groups.all) > 1:
+TypeError: object of type 'method' has no len()
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/accounts/views.py changed, reloading.
+WARNING:django.request:Not Found: /user
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /user
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/tuxconfig_django/settings.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /user
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/tuxconfig_django/urls.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/user/views.py changed, reloading.

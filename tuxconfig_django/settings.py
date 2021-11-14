@@ -54,9 +54,14 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     "contributor",
     "django.contrib.admin",
+    "user"
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 AUTH_USER_MODEL = 'user_model.User'
+
+TEMPLATE_DIRS = [
+    os.path.join(BASE_DIR, 'templates'),
+]
 
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 ANYMAIL = {

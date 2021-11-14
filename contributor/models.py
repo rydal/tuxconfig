@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import Group
 # Create your models here.
 from tuxconfig_django import settings
 
@@ -7,7 +7,7 @@ from tuxconfig_django import settings
 class RepoModel(models.Model):
     contributor = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        related_name="points_to_user",
+        related_name="contributor_to_user",
         on_delete=models.CASCADE,
     )
     id = models.AutoField(primary_key=True)
@@ -33,3 +33,5 @@ class Devices(models.Model):
         on_delete=models.CASCADE,
     )
     device_id = models.CharField(max_length=12)
+    created = models.DateTimeField(auto_now_add=True)
+    objects = models.Manager()

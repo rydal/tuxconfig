@@ -34,8 +34,6 @@ logging.basicConfig(filename='debug.log', level=logging.INFO)
 from allauth.account.views import SignupView, LoginView
 
 
-class MySignupView(SignupView):
-    template_name = 'my_signup.html'
 
 
 class MyLoginView(LoginView):
@@ -158,11 +156,16 @@ def user_login(request):
 
 @login_required
 def profile(request):
-    try:
-        social_id = SocialAccount.objects.get(user_id=request.user.pk)
-        return redirect("/contributor/")
-    except SocialAccount.DoesNotExist:
-        return redirect("/accounts/login")
+    if len(request.user.groups.all()) > 1:
+        pass
+    elif request.user.groups.all()[0].name == "github":
+        return redirect("/contributor")
+    elif request.user.groups.all()[0].name == "google":
+        return redirect("/user")
+    else:
+        return HttpResponse("Invalid user")
+
+
 
 
 
@@ -289,3 +292,28 @@ def forget(request, uidb64, token):
 
 def csrf_failure(request, reason=""):
     return render(request, "account/error_page.html")
+
+
+from allauth.account.signals import user_logged_in
+from django.core.signals import request_finished
+from django.dispatch import receiver
+from allauth.socialaccount.models import SocialAccount
+from django.contrib.auth.models import Group
+
+@receiver(user_logged_in)
+def login_github_user(sender, request, user, **kwargs):
+    try:
+        socialuser = SocialAccount.objects.get(user=user, provider="github")
+        group = Group.objects.get(name='github')
+        user.groups.add(group)
+    except SocialAccount.DoesNotExist:
+        pass
+    try:
+        socialuser = SocialAccount.objects.get(user=user, provider="google")
+        group = Group.objects.get(name='google')
+        user.groups.add(group)
+    except SocialAccount.DoesNotExist:
+        pass
+
+
+

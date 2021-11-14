@@ -26,6 +26,7 @@ urlpatterns = [
     path('social/', include('allauth.urls')),
     path('accounts/', include('accounts.urls')),
     path('contributor/', include('contributor.urls')),
+    path('user/', include('user.urls')),
 
 ] + static( settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

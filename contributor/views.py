@@ -111,4 +111,3 @@ class Moduleconfig:
     def getModule(self):
         return self
 
-
