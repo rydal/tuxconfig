@@ -11,8 +11,12 @@
 {% block content %}
     <h4>Added repositories:</h4>
     {%  for repo in live_repos %}
-        <p><b>{{  repo.git_url }}</b></p>
-        <p><b>{{  repo.git_commit }}</b></p>
+        <p>{{  repo.git_repo }}</p>
+        <p>{{  repo.git_commit }}</p>
+        {%  for device in repo.devices %}
+            {{  device.device_id }}
+            {%  endfor %}
+
     {%  endfor %}
     <h4>Available repositories:</h4>
     <form method="post">

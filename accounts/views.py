@@ -51,117 +51,10 @@ class MyLoginView(LoginView):
 #     return render(request, 'register/user_register.html', {'form': form})
 
 
-def resend_email(request):
-    if request.method == "POST":
-        user_form = ResendEmailForm(request.POST)
-        if user_form.is_valid():
-            email = user_form.cleaned_data.get("email")
-            try:
-                user = User.objects.get(email=email)
-                if user.is_verified:
-                    messages.info(request, "You're already verified with us.")
-                else:
-                    uid = urlsafe_base64_encode(force_bytes(user.pk))
-                    token = default_token_generator.make_token(user)
-
-                    logging.info(
-                        "view account.register: /account/activate/" + uid + "/" + token + "/"
-                    )
-
-                    current_site = get_current_site(request)
-                    mail_subject = "Computers for schools: Activate your account."
-                    message = render_to_string(
-                        "account/acc_active_email.html",
-                        {
-                            "user": user,
-                            "user_type": user.role,
-                            "domain": current_site.domain,
-                            "uid": uid,
-                            "token": token,
-                        },
-                    )
-                    to_email = user_form.cleaned_data.get("email")
-                    email = EmailMessage(
-                        mail_subject, message, "support@computerstoschools.co.uk", to=[to_email]
-                    )
-                    email.content_subtype = "html"
-
-                    email.send()
-                    messages.success(request,
-                                     "Please check your email account for a registration link, then you can login.")
-            except:
-                user = None
-                messages.error(request, "We can't find your email address registered with us")
-        else:
-
-            messages.error(request, "Form error" + json.dumps(user_form.errors))
-        messages.info(request, "Verification email resent, please check your email for a verification code.")
-        return render(request, "account/register_done.html")
-    else:
-        user_form = ResendEmailForm()
-        return render(
-            request,
-            "account/resend_email.html",
-            {"user_form": user_form, },
-        )
-
-
-def user_login(request):
-    logging.info("Login: view account.user_login")
-
-    if request.method == "POST":
-        login_form = UserLoginForm2(request.POST)
-        if login_form.is_valid():
-            logging.info("Login: Form is valid")
-            cd = login_form.cleaned_data
-            u_search = User.objects.filter(email=cd["email"].lower())
-            if len(u_search) == 0:
-                logging.info("Login: Email not found")
-                messages.error(request, "Email not found")
-            elif len(u_search) > 1:
-                logging.info("Login: Error, multiple records with same email")
-                messages.error(request, "Multiple records found")
-            else:
-                u = u_search[0]
-                logging.info("Login: Found user " + str(u.id))
-                user = authenticate(request, username=u, password=cd["password"])
-                logging.error("WTF")
-                if user is not None:
-                    logging.info("user found.")
-                    if not user.is_verified:
-                        messages.error(request, "User not verified over email")
-                        return render(
-                            request, "registration/login.html", {"form": login_form}
-                        )
-                    if user.is_active:
-                        login(request, user)
-                        # membership = Membership.objects.get(org=user.profile.default_org, user=user)
-                        logging.info("Login: Successful")
-                        # request.session['oid'] = user.profile.default_org.id.hex
-                        # request.session['org_group'] = membership.group
-                        # request.session['aid'] = user.username
-                    if user.role == User.SCHOOL:
-                        return redirect('/teacher/')
-                    else:
-                        return redirect('/donor/')
-                else:
-                    logging.info("Login: Invalid login")
-                    messages.error(request, "Invalid login")
-        else:
-            messages.error(request, "Form error" + json.dumps(login_form.errors))
-
-    login_form = UserLoginForm2()
-    return render(request, "registration/login.html", {"form": login_form})
-
-
 @login_required
 def profile(request):
-    if len(request.user.groups.all()) > 1:
-        pass
-    elif request.user.groups.all()[0].name == "github":
+    if request.user.groups.all()[0].name == "github":
         return redirect("/contributor")
-    elif request.user.groups.all()[0].name == "google":
-        return redirect("/user")
     else:
         return HttpResponse("Invalid user")
 
@@ -308,18 +201,7 @@ def login_user(sender, request, user, **kwargs):
         user.groups.add(group)
     except SocialAccount.DoesNotExist:
         pass
-    try:
-        socialuser = SocialAccount.objects.get(user=user, provider="google")
-        group = Group.objects.get(name='google')
-        user.groups.add(group)
-    except SocialAccount.DoesNotExist:
-        pass
-    try:
-        socialuser = SocialAccount.objects.get(user=user, provider="stackexchange")
-        group = Group.objects.get(name='stackexchange')
-        user.groups.add(group)
-    except SocialAccount.DoesNotExist:
-        pass
+
 
 
 

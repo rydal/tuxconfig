@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from allauth.socialaccount.models import SocialAccount
 from .models import RepoModel, Devices
 from django.contrib import messages
-
+import  requests
 import git
 @login_required
 def profile(request):
@@ -16,26 +16,24 @@ def profile(request):
             s = SocialAccount.objects.get(user_id=request.user.pk)
             try:
                 latest_commit = get_latest_commit(s.extra_data['login'],repo.rsplit('/', 1)[-1])
-                stored_repo = RepoModel.objects.get(git_url=repo,git_commit=latest_commit['sha'])
+                RepoModel.objects.get(git_repo=repo,git_commit=latest_commit['sha'])
 
                 messages.error(request,"Commit already imported.")
 
             except RepoModel.DoesNotExist:
 
                 latest_commit = get_latest_commit(s.extra_data['login'],repo.rsplit('/', 1)[-1])
-                module_config =  check_tuxconfig(s.extra_data['login'],repo.rsplit('/', 1)[-1])
-                module = module_config.getModule()
-                if module.error is not True:
-                    messages.error(request,module.error)
+                module_config , error =  check_tuxconfig(s.extra_data['login'],repo.rsplit('/', 1)[-1])
+                git_repo = repo.rsplit('/', 1)[-1]
+                if error is not None:
+                    messages.error(request,error)
                 else:
-                    repo_model = RepoModel(contributor=request.user,git_url=repo,git_commit=latest_commit['sha'],upvotes=0,downvotes=0,signed_off=False)
+                    repo_model = RepoModel(contributor=request.user,git_repo=git_repo,git_username=s.extra_data['login'],git_commit=latest_commit['sha'],upvotes=0,downvotes=0,signed_off=False)
                     repo_model.save()
-                    if module.device_ids is not False:
-                        for device in module.device_ids:
-                            Devices(contributor=request.user,device_id=device,repo_model=repo_model).save()
-                        messages.success(request,"Repository imported")
-                    else:
-                        print (module.device_ids)
+                    for device in module_config.device_ids:
+                        Devices(contributor=request.user,device_id=device,repo_model=repo_model).save()
+                    messages.success(request,"Repository imported")
+
 
 
 
@@ -46,7 +44,8 @@ def profile(request):
     result = get_repos(git_user_details)
 
     live_repos = RepoModel.objects.filter(contributor=request.user)
-
+    for repo in live_repos:
+        repo.devices =  Devices.objects.filter(repo_model=repo)
     return render(request, "repos.html", {"live_repos" : live_repos , "repo_list" : result })
 
 def get_repos(username):
@@ -79,32 +78,61 @@ def check_tuxconfig(owner,repo):
     result = dict(re.findall(r'(\S+)=(".*?"|\S+)', page))
     print (result)
     print (result['device_ids'] + "EH?")
-    device_string = result['device_ids']
-    module = result['tuxconfig_module']
-    dependencies  = result['dependencies']
-    restart = result['restart_needed']
+    error = None
+    if "device_ids" in result:
+        device_string = result['device_ids']
+    else:
+        error = "device_ids not present"
+        return None, error
+    if "tuxconfig_module" in result:
+        module = result['tuxconfig_module']
+    else:
+        error = "tuxconfig_module not present"
+        return None, error
+    if "dependencies" in result:
+        dependencies  = result['dependencies']
+    else:
+        error = "dependencies not present"
+        return None, error
+    if "version" in result:
+        version = result['version']
+    else:
+        error = "Version not present"
+        return None, error
+    stars, creation_date = get_stars(owner,repo)
+    if stars < 20:
+        error = "Need at least 20 starts to be submitted to our program"
+        return None, error
+    if creation_date <
     devices = []
-    for device in device_string.split(" "):
-        devices.append(device)
-    module_config = Moduleconfig(devices,module,dependencies,restart)
-    return module_config
+    if error is not None:
+        return None, error
+    else:
+        for device in device_string.split(" "):
+            device = device.strip(" ")
+            if not re.findall("[0-9a-zA-Z]{4}:[0-9a-zA-Z]{4}",device):
+                error = "Device id must be of format nnnn:nnnn"
+                return None, error
+            devices.append(device)
+        module_config = Moduleconfig(devices,module,dependencies,version)
+        return module_config , None
 
 
+
+def get_stars(owner,repo):
+    r = requests.get("https://api.github.com/repos/" + owner + "/" + repo)
+    result = r.json()
+    return result['stargazers_count'], result['created_at']
 
 class Moduleconfig:
 
-    def __init__(self, device_ids, module_id,dependencies,restart):
+    def __init__(self, device_ids, module_id,dependencies,version):
         self.device_ids = device_ids
         self.module_id = module_id
         self.dependencies = dependencies
-        self.restart = restart
-        self.error = ""
-        if module_id is None:
-            self.error = "Device id not defined"
-        elif device_ids is None:
-            self.error = "Module id not defined"
-        else:
-            self.error =  True
+        self.version = version
+
+
 
 
 

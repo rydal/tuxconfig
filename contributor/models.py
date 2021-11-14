@@ -11,8 +11,9 @@ class RepoModel(models.Model):
         on_delete=models.CASCADE,
     )
     id = models.AutoField(primary_key=True)
-    git_url = models.CharField(max_length=240)
+    git_repo = models.CharField(max_length=240)
     git_commit = models.CharField(max_length=240)
+    git_username = models.CharField(max_length=240)
     upvotes = models.PositiveIntegerField(default=0)
     downvotes = models.PositiveIntegerField(default=0)
     signed_off = models.BooleanField(default=False)
