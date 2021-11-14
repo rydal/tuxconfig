@@ -211,5 +211,13 @@ SOCIALACCOUNT_PROVIDERS = {
             'key': ''
         }
 
+    },
+    'stackexchange': {
+        'SITE': 'stackoverflow',
+        'APP': {
+            'client_id': '21283',
+            'secret': 'ivD2kRCsJUuNCIVfRJcIZg((',
+            'key': 'h)NgmMYB8roBVJWRpU)Smg(('
+        }
     }
 }

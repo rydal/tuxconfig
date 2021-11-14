@@ -1,0 +1,15 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+{% block title %} Tuxconfig {% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Sign off on app</h3> {% endblock %}
+{% block content %}
+    
+    {%  for repo in repoFormSet %}
+        {{  repo }}
+    {% endfor %}
+
+{% endblock %}

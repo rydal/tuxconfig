@@ -7,13 +7,20 @@ from contributor.models import RepoModel, Devices
 from tuxconfig_django import settings
 from django.http import JsonResponse
 
+from user.page_rank import GetPR
+
+
 def check_device_exists(request):
     device_id = request.GET['device_id']
     version = request.GET['version']
-    available_devices = Devices.objects.filter(device_id=device_id).order_by("repo_model__upvotes")
-    result = available_devices[version]
+
+    repositories = Devices.objects.filter(device_id=device_id)._meta.get_field('repo_model').related_model
+    GetPR
+
+
+    clone_url = result.git_url + "/commit/" + result.git_commit
     if result.signed_off:
-        return JsonResponse({'url': result.git_url, "commit_id" : result.git_commit })
+        return JsonResponse({'clone_url': result.git_url, "user_details" : result.contributor, "none" : False })
     else:
         return JsonResponse({'none' : True })
 

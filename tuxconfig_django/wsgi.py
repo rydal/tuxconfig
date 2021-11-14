@@ -24,6 +24,11 @@ new_group, created = Group.objects.get_or_create(name='google')
 permissions_list =  Permission.objects.all()
 new_group.permissions.set(permissions_list)
 
+
+new_group, created = Group.objects.get_or_create(name='stackexchange')
+permissions_list =  Permission.objects.all()
+new_group.permissions.set(permissions_list)
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tuxconfig_django.settings')
 
 application = get_wsgi_application()

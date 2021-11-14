@@ -25,6 +25,7 @@
         <option value="$MODULE_DIR$/accounts/templates" />
         <option value="$MODULE_DIR$/contributor/templates" />
         <option value="$MODULE_DIR$/user/templates" />
+        <option value="$MODULE_DIR$/vetting/templates" />
       </list>
     </option>
   </component>
