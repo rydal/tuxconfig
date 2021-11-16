@@ -109,7 +109,7 @@ def check_tuxconfig(owner,repo):
         return None, error
     stars = get_stars(owner,repo)
     if stars < settings.MIN_STARS:
-        error = "Need at least 20 starts to be submitted to our program"
+        error = "Need at least 20 stars to be submitted to our program"
         return None, error
     devices = []
     if error is not None:

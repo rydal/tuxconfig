@@ -1,6 +1,7 @@
 from django import forms
 
 from contributor.models import RepoModel
+from vetting.models import VettingDetails
 
 
 class RepoForm(forms.ModelForm):
@@ -18,10 +19,8 @@ class RepoForm(forms.ModelForm):
 
 
 class UserDetailsForm(forms.ModelForm):
-    id = forms.HiddenInput()
-
 
     class Meta:
-        model = RepoModel
-        fields = ('bio','emaiil','website','avatar_url',"id")
+        model = VettingDetails
+        fields = ('bio','email','website','avatar_url','location',"name","company")
 

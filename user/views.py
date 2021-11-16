@@ -46,9 +46,6 @@ def get_user_details(request,repo_model):
     github_url = "https://api.github.com/users/" + model.git_username
     s = urlopen(github_url)
     respBody = json.loads(s.read())
-
-
-
     sign_off_user = SignedOff.objects.filter(repo_model=model).order_by("?").first()
 
     return render(request,"get_user_details.html", {"git_user" : respBody, "signed_off_by" : sign_off_user })

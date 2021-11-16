@@ -20,7 +20,8 @@ from django.core.signals import request_finished
 from django.dispatch import receiver
 from allauth.socialaccount.models import SocialAccount
 from django.contrib.auth.models import Group
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 
 
 @receiver(user_logged_in)
@@ -31,6 +32,19 @@ def login_user(sender, request, user, **kwargs):
         user.groups.add(group)
     except SocialAccount.DoesNotExist:
         pass
+
+
+
+@login_required
+def profile(request):
+    if request.user.groups.all()[0].name == "github":
+        return redirect("/contributor")
+    elif request.user.groups.all()[0].name == "vetting":
+        return redirect("/vetting")
+    else:
+        return HttpResponse("Invalid user")
+
+
 
 
 from django.http import HttpResponse, HttpResponseRedirect
@@ -51,3 +65,6 @@ def howitworks(request):
 
 def index(request):
     return render(request,"index.html")
+
+def login(request):
+    return  redirect("/social/login")

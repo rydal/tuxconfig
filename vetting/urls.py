@@ -9,6 +9,8 @@ from django.conf.urls import url
 app_name = "vetting"
 
 urlpatterns = [
-    url('', views.dashboard, name='profile'),
+    path('edit_details/', views.add_user_details, name='vetter_details'),
+    path('', views.dashboard, name='profile'),
+
 
 ]

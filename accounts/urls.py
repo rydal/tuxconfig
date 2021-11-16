@@ -16,5 +16,7 @@ app_name = "account"
 
 urlpatterns = [
     path('howitworks/', views.howitworks, name='howitworks'),
+    path('login/', views.login, name='login'),
+    path('profile/', views.profile, name='profile'),
 
 ]

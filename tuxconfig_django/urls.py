@@ -25,6 +25,7 @@ from tuxconfig_django import settings
 urlpatterns = [
     url(r"^admin/", admin.site.urls),
     path('social/', include('allauth.urls')),
+    path('accounts/', include('accounts.urls')),
     path('', accounts.views.index),
     path('contributor/', include('contributor.urls')),
     path('user/', include('user.urls')),

@@ -10,7 +10,8 @@
 {%  block heading %} <h3>Dashboard:</h3> {% endblock %}
 {% block content %}
 
-    <h1>Sign off on module:</h1>
+
+        <h1>Sign off on module:</h1>
     {%  for repo in repositories %}
         <form method="post">
             {{ repositories.managemnet_form }}
@@ -33,7 +34,10 @@
         <button class="btn btn-primary">Add / set discussion url.</button>
         </form>
 
+        {%  empty %}
+        <p class="alert alert-warning">No modules to sign off right now</p>
     {%  endfor %}
+
 
 
 
