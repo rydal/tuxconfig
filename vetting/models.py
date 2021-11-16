@@ -22,3 +22,15 @@ class SignedOff(models.Model):
     upvoted = models.BooleanField(default=False)
     downvoted = models.BooleanField(default=False)
     objects = models.Manager()
+
+class VettingDetails(models.Model):
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        related_name="vetter_to_user",
+        on_delete=models.CASCADE,
+    )
+    id = models.AutoField(primary_key=True)
+    bio = models.CharField(max_length=240)
+    email = models.CharField(max_length=240)
+    website = models.CharField(max_length=240)
+    avatar_url = models.CharField(max_length=240)

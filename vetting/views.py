@@ -2,12 +2,12 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from contributor.models import RepoModel
-from vetting.forms import RepoForm
+from vetting.forms import RepoForm, UserDetailsForm
 from django.forms import modelformset_factory
 
 from django.contrib.auth.decorators import user_passes_test
 
-from vetting.models import SignedOff
+from vetting.models import SignedOff, VettingDetails
 
 
 @user_passes_test(lambda u: u.groups.filter(name='vetting').exists())
@@ -47,7 +47,22 @@ def dashboard(request):
     return render(request,"dashboard.html",{"repositories" : repositories_formset })
 
 
+def add_user_details(request):
+    vetting_details = VettingDetails.objects.get(user=request.user)
+    if request.POST:
+        user_details = UserDetailsForm(request.POST)
 
+        if user_details.is_valid():
+             vetting_user = user_details.save(commit=False)
+             vetting_user.user = request.user
+             user_details.save()
+        else:
+            print("form not valid")
+    if vetting_details is not None:
+        user_details = UserDetailsForm(instance=vetting_details)
+    else:
+        user_details = UserDetailsForm()
+    return render(request,"dashboard.html",{"user_details" : user_details })
 
 
 

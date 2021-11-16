@@ -17,4 +17,11 @@ class RepoForm(forms.ModelForm):
         fields = ('discussion_url',"upvotes","downvotes","git_commit","git_username","git_url","module_name","id")
 
 
+class UserDetailsForm(forms.ModelForm):
+    id = forms.HiddenInput()
+
+
+    class Meta:
+        model = RepoModel
+        fields = ('bio','emaiil','website','avatar_url',"id")
 
