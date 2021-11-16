@@ -12,6 +12,7 @@
 
 
         <h1>Sign off on module:</h1>
+
     {%  for repo in repositories %}
         <form method="post">
             {{ repositories.managemnet_form }}
@@ -30,13 +31,14 @@
 
     <br>
 
-        {%  csrf_token %}
-        <button class="btn btn-primary" value="{{ repo.instance.id }}" name="set_url" type="submit">Add / set discussion url.</button>
 
+        <button class="btn btn-primary" type="submit">Add / set discussion url.</button>
+        {%  csrf_token %}
+        </form>
 
         {%  empty %}
         <p class="alert alert-warning">No modules to sign off right now</p>
-        </form>
+
     {%  endfor %}
 
 
