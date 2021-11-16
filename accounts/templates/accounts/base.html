@@ -22,18 +22,20 @@
 
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav  active my-2 me-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home</a>
-            </li>
+
 
               {% if request.user.is_authenticated %}
           <li class="nav-item active">
                 <a class="nav-link" href="{% url "account:profile" %}">Dashboard</a>
             </li>
-
+                  <li class="nav-item active">
+                      <a class="nav-link" href="{% url "account:logout" %}">Logout</a>
+                  </li>
 
           {% else %}
-
+                  <li class="nav-item active">
+                      <a class="nav-link" href="/">Home</a>
+                  </li>
           {% endif %}
           </ul>
           

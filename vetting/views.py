@@ -29,8 +29,8 @@ def dashboard(request):
                 repo_model = RepoModel.objects.get(git_repo=git_repo,git_username=git_username,git_commit=git_commit)
                 repo_model.discussion_url = answer_form.cleaned_data.get("discussion_url")
                 repo_model.save()
-        else:
-            pass
+
+
         if "upvote" in request.POST:
             pk =  request.POST.get("upvote")
             repo_model = RepoModel.objects.get(id=pk)

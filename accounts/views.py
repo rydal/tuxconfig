@@ -10,10 +10,7 @@ from django.conf import settings
 
 logging.basicConfig(filename='debug.log', level=logging.INFO)
 from allauth.account.views import SignupView, LoginView
-
-
-
-
+from django.contrib.auth import logout
 
 from allauth.account.signals import user_logged_in
 from django.core.signals import request_finished
@@ -52,8 +49,9 @@ from django.urls import reverse
 
 
 def logout_user(request):
-    response = HttpResponseRedirect(reverse('index.html'))
-    return response
+    if request.user.is_authenticated:
+        logout(request)
+    return render(request,"accounts/index.html")
 
 
 def privacy(request):
@@ -64,7 +62,7 @@ def howitworks(request):
     return None
 
 def index(request):
-    return render(request,"index.html")
+    return render(request, "accounts/index.html")
 
 def login(request):
     return  redirect("/social/login")

@@ -28,14 +28,15 @@
             <img src="{% static "down_button.png" %}" />
         </button>
 
-    <br><br>
+    <br>
 
         {%  csrf_token %}
-        <button class="btn btn-primary">Add / set discussion url.</button>
-        </form>
+        <button class="btn btn-primary" value="{{ repo.instance.id }}" name="set_url" type="submit">Add / set discussion url.</button>
+
 
         {%  empty %}
         <p class="alert alert-warning">No modules to sign off right now</p>
+        </form>
     {%  endfor %}
 
 

@@ -14,12 +14,12 @@ from django.contrib.auth.decorators import user_passes_test
 @login_required
 def profile(request):
     if request.POST:
-        if "repository" in request.POST:
-            repo = request.POST['repository']
+        if "add_repository" in request.POST:
+            repo = request.POST['add_repository']
             s = SocialAccount.objects.get(user_id=request.user.pk)
             try:
                 latest_commit = get_latest_commit(s.extra_data['login'],repo.rsplit('/', 1)[-1])
-                RepoModel.objects.get(git_repo=repo,git_commit=latest_commit['sha'])
+                RepoModel.objects.get(contributor=request.user,git_repo=repo,git_commit=latest_commit['sha'])
 
                 messages.error(request,"Commit already imported.")
 
@@ -37,6 +37,19 @@ def profile(request):
                         Devices(contributor=request.user,device_id=device,repo_model=repo_model).save()
                     messages.success(request,"Repository imported")
 
+    if "delete_repository" in request.POST:
+        id = request.POST['delete_repository']
+        s = SocialAccount.objects.get(user_id=request.user.pk)
+        try:
+            repo = RepoModel.objects.get(contributor=request.user,id=id)
+            commit_id = repo.git_commit
+            commit_name = repo.git_repo
+            repo.delete()
+
+            messages.success(request, commit_name + " " + commit_id + " deleted.")
+
+        except RepoModel.DoesNotExist:
+            messages.error(request,"Repository not found")
 
 
 
@@ -87,8 +100,8 @@ def check_tuxconfig(owner,repo):
     else:
         error = "device_ids not present"
         return None, error
-    if "tuxconfig_module" in result:
-        module = result['tuxconfig_module']
+    if "module_id" in result:
+        module = result['module_id']
     else:
         error = "tuxconfig_module not present"
         return None, error
@@ -102,11 +115,7 @@ def check_tuxconfig(owner,repo):
     else:
         error = "Version not present"
         return None, error
-    if "module_id" in result:
-        version = result['module_id']
-    else:
-        error = "Version not present"
-        return None, error
+
     stars = get_stars(owner,repo)
     if stars < settings.MIN_STARS:
         error = "Need at least 20 stars to be submitted to our program"

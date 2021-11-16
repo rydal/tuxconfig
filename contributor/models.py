@@ -20,6 +20,7 @@ class RepoModel(models.Model):
     signed_off = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     module_name = models.CharField(max_length=40,null=True)
+    module_version = models.CharField(max_length=40,null=True)
     objects = models.Manager()
 
 class Devices(models.Model):
