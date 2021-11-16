@@ -5607,3 +5607,1059 @@ INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/vi
 INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
 INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
 INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /contr
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/tuxconfig_django/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/1/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 24, in check_device_exists
+    repo.stars = get_stars(repo.git_username,repo.git_repo)
+NameError: name 'get_stars' is not defined
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/1/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 25, in check_device_exists
+    result = repositories[version]
+IndexError: list index out of range
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/0/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 26, in check_device_exists
+    clone_url = result.git_url + "/commit/" + result.git_commit
+AttributeError: type object 'RepoModel' has no attribute 'git_url'
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/0/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 26, in check_device_exists
+    clone_url = result.git_username + "/commit/" + result.git_commit
+TypeError: unsupported operand type(s) for +: 'DeferredAttribute' and 'str'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/0/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 26, in check_device_exists
+    clone_url = result.git_username + "/commit/" + result.git_commit
+TypeError: unsupported operand type(s) for +: 'DeferredAttribute' and 'str'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/0/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 23, in check_device_exists
+    repo = device._meta.get_all_related_objects()
+AttributeError: 'Options' object has no attribute 'get_all_related_objects'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/0/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 25, in check_device_exists
+    clone_url = result.git_username + "/commit/" + result.git_commit
+AttributeError: 'Devices' object has no attribute 'git_username'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/0/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 18, in check_device_exists
+    repos = RepoModel.objects.filter(Devices__device_id=device_id)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1286, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1112, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1539, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'Devices' into field. Choices are: contributor, contributor_id, created, device_to_repository, downvotes, git_commit, git_repo, git_username, id, module_name, signed_off, two_week_user_to_repository, upvotes, user_to_repository
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/0/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 30, in check_device_exists
+    resp = h.request(clone_url, 'HEAD')
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/httplib2/__init__.py", line 1555, in request
+    (scheme, authority, request_uri, defrag_uri) = urlnorm(uri)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/httplib2/__init__.py", line 215, in urlnorm
+    raise RelativeURIError("Only absolute URIs are allowed. uri = %s" % uri)
+httplib2.error.RelativeURIError: Only absolute URIs are allowed. uri = rydal/commit/5e5740364323cff3e1e894f3ddbe1f36983ddcc1
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/0/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 32, in check_device_exists
+    return JsonResponse({'clone_url': result.git_url, "user_details" : result.contributor, "none" : False })
+AttributeError: 'RepoModel' object has no attribute 'git_url'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/0/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 32, in check_device_exists
+    return JsonResponse({'clone_url': clone_url, "user_details" : result.contributor, "none" : False })
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/http/response.py", line 603, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type User is not JSON serializable
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user_model/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/models.py changed, reloading.
+WARNING:django.request:Not Found: /social
+WARNING:django.request:Not Found: /social/
+WARNING:django.request:Not Found: /accounts/profile/
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/tuxconfig_django/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/models.py changed, reloading.
+WARNING:django.request:Not Found: /vetting
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/tuxconfig_django/urls.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 14, in dashboard
+    return render(request,"dashboard.html",{"repositories" : repositories_formset })
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'profile' not found. 'profile' is not a valid view function or pattern name.
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /login/
+INFO:root:Login: view account.user_login
+ERROR:django.request:Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/accounts/views.py", line 133, in user_login
+    return render(request, "registration/login.html", {"form": login_form})
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'profile' not found. 'profile' is not a valid view function or pattern name.
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /contributor/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: contributor_repomodel.discussion_url
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py", line 49, in profile
+    for repo in live_repos:
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: contributor_repomodel.discussion_url
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 14, in dashboard
+    return render(request,"dashboard.html",{"repositories" : repositories_formset })
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/formsets.py", line 99, in __len__
+    return len(self.forms)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/formsets.py", line 155, in forms
+    return [
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/formsets.py", line 156, in <listcomp>
+    self._construct_form(i, **self.get_form_kwargs(i))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/models.py", line 632, in _construct_form
+    form = super()._construct_form(i, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/formsets.py", line 193, in _construct_form
+    form = self.form(**defaults)
+TypeError: __init__() got an unexpected keyword argument 'instance'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 13, in dashboard
+    repositories_formset = AnswerFormSet(instance=repos)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/models.py", line 581, in __init__
+    super().__init__(**{'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix, **kwargs})
+TypeError: __init__() got an unexpected keyword argument 'instance'
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 13, in dashboard
+    repositories_formset = AnswerFormSet(instance=repos)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/models.py", line 581, in __init__
+    super().__init__(**{'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix, **kwargs})
+TypeError: __init__() got an unexpected keyword argument 'instance'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 14, in dashboard
+    return render(request,"dashboard.html",{"repositories" : repositories_formset })
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/formsets.py", line 99, in __len__
+    return len(self.forms)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/formsets.py", line 155, in forms
+    return [
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/formsets.py", line 156, in <listcomp>
+    self._construct_form(i, **self.get_form_kwargs(i))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/models.py", line 632, in _construct_form
+    form = super()._construct_form(i, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/formsets.py", line 193, in _construct_form
+    form = self.form(**defaults)
+TypeError: __init__() got an unexpected keyword argument 'instance'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+WARNING:django.request:Not Found: /accounts/profile/
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/url
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 35, in dashboard
+    return render(request,"dashboard.html",{"repositories" : repositories_formset })
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 216, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 814, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/templatetags/static.py", line 159, in do_static
+    return StaticNode.handle_token(parser, token)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/templatetags/static.py", line 133, in handle_token
+    path = parser.compile_filter(bits[1])
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '"up_button' from '"up_button'
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /vetting/url
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 35, in dashboard
+    return render(request,"dashboard.html",{"repositories" : repositories_formset })
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 216, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 814, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/templatetags/static.py", line 159, in do_static
+    return StaticNode.handle_token(parser, token)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/templatetags/static.py", line 133, in handle_token
+    path = parser.compile_filter(bits[1])
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '"up_button' from '"up_button'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+WARNING:django.request:Not Found: /social/
+WARNING:django.request:Not Found: /accounts/profile/
+WARNING:django.request:Not Found: /accounts/profile/
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+WARNING:django.request:Not Found: /social/
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/tuxconfig_django/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/tuxconfig_django/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/tuxconfig_django/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/tuxconfig_django/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/tuxconfig_django/settings.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /social/login/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 216, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static', expected 'endblock'. Did you forget to register or load this tag?
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /social/login/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/engine.py", line 129, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: accounts/base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: accounts/base.html
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/tuxconfig_django/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/forms.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/paginator.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/urls.py changed, reloading.
+ERROR:django.request:Internal Server Error: /social/login/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'login' not found. 'login' is not a valid view function or pattern name.
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /social/login/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '/social/login' not found. '/social/login' is not a valid view function or pattern name.
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /social/login/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '/social/login/' not found. '/social/login/' is not a valid view function or pattern name.
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /social/
+ERROR:django.request:Internal Server Error: /social/login/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 312, in render
+    return nodelist.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '/social/login' not found. '/social/login' is not a valid view function or pattern name.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/tuxconfig_django/urls.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/accounts/views.py", line 53, in index
+    return render()
+TypeError: render() missing 2 required positional arguments: 'request' and 'template_name'
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/accounts/views.py", line 53, in index
+    return render(request,"index.html")
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_contributor/21/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_user_details() got an unexpected keyword argument 'pk'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/urls.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_contributor/21/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: vetting_signedoff
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 43, in get_user_details
+    sign_off_user = SignedOff.objects.filter(repo_model=model).order_by("?").first()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 674, in first
+    for obj in (self if self.ordered else self.order_by('pk'))[:1]:
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: vetting_signedoff
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_contributor/21/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 45, in get_user_details
+    avatar_url = github_url['avatar_url']
+TypeError: tuple indices must be integers or slices, not str
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_contributor/21/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 46, in get_user_details
+    respBody = json.loads(github_url.read())
+AttributeError: 'tuple' object has no attribute 'read'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_contributor/21/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 46, in get_user_details
+    s = github_url.read()
+AttributeError: 'tuple' object has no attribute 'read'
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /user/get_contributor/21/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 46, in get_user_details
+    s = github_url.read()
+AttributeError: 'tuple' object has no attribute 'read'
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /user/get_contributor/21/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 46, in get_user_details
+    s = github_url.read()
+AttributeError: 'tuple' object has no attribute 'read'
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_contributor/21/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 47, in get_user_details
+    s = urlopen(github_url)
+  File "/usr/lib/python3.8/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.8/urllib/request.py", line 515, in open
+    req.timeout = timeout
+AttributeError: 'tuple' object has no attribute 'timeout'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_contributor/21/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 47, in get_user_details
+    s = urlopen(github_url)
+  File "/usr/lib/python3.8/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.8/urllib/request.py", line 515, in open
+    req.timeout = timeout
+AttributeError: 'tuple' object has no attribute 'timeout'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/accounts/views.py changed, reloading.

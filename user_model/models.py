@@ -56,3 +56,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         return "/users/%i/" % (self.pk)
 
 # Create your models here.
+
+class UserDetails(models.Model):
+    user =  models.OneToOneField(User,on_delete=models.CASCADE)
+    business_url = models.CharField(max_length=240)
+    business_image_url = models.CharField(max_length=240)

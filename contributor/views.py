@@ -4,10 +4,13 @@ from django.shortcuts import render
 import urllib.request, json
 from django.contrib.auth.decorators import login_required
 from allauth.socialaccount.models import SocialAccount
+
+from tuxconfig_django import settings
 from .models import RepoModel, Devices
 from django.contrib import messages
 import  requests
-import git
+from django.contrib.auth.decorators import user_passes_test
+
 @login_required
 def profile(request):
     if request.POST:
@@ -28,7 +31,7 @@ def profile(request):
                 if error is not None:
                     messages.error(request,error)
                 else:
-                    repo_model = RepoModel(contributor=request.user,git_repo=git_repo,git_username=s.extra_data['login'],git_commit=latest_commit['sha'],upvotes=0,downvotes=0,signed_off=False)
+                    repo_model = RepoModel(contributor=request.user,git_repo=git_repo,git_username=s.extra_data['login'],git_commit=latest_commit['sha'],module_name=module_config.module_id,upvotes=0,downvotes=0,signed_off=False)
                     repo_model.save()
                     for device in module_config.device_ids:
                         Devices(contributor=request.user,device_id=device,repo_model=repo_model).save()
@@ -99,11 +102,15 @@ def check_tuxconfig(owner,repo):
     else:
         error = "Version not present"
         return None, error
-    stars, creation_date = get_stars(owner,repo)
-    if stars < 20:
+    if "module_id" in result:
+        version = result['module_id']
+    else:
+        error = "Version not present"
+        return None, error
+    stars = get_stars(owner,repo)
+    if stars < settings.MIN_STARS:
         error = "Need at least 20 starts to be submitted to our program"
         return None, error
-    if creation_date <
     devices = []
     if error is not None:
         return None, error
@@ -122,7 +129,7 @@ def check_tuxconfig(owner,repo):
 def get_stars(owner,repo):
     r = requests.get("https://api.github.com/repos/" + owner + "/" + repo)
     result = r.json()
-    return result['stargazers_count'], result['created_at']
+    return result['stargazers_count']
 
 class Moduleconfig:
 
@@ -131,6 +138,7 @@ class Moduleconfig:
         self.module_id = module_id
         self.dependencies = dependencies
         self.version = version
+
 
 
 

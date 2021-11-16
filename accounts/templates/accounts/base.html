@@ -28,14 +28,12 @@
 
               {% if request.user.is_authenticated %}
           <li class="nav-item active">
-                <a class="nav-link" href="{% url "account:profile" %}">Dashboard</a>
+                <a class="nav-link" href="{% url "account:dashboard" %}">Dashboard</a>
             </li>
 
 
           {% else %}
-            <li  class="nav-item active">
-              <a class="nav-link" href="{% url "account:login" %}">Log-in</a>
-            </li>
+
           {% endif %}
           </ul>
           

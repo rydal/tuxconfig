@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     "contributor",
     "django.contrib.admin",
-    "user"
+    "user",
+    "vetting"
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 AUTH_USER_MODEL = 'user_model.User'
@@ -101,7 +102,7 @@ ROOT_URLCONF = 'tuxconfig_django.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [(os.path.join(BASE_DIR, 'my_Templates_Directory')),],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -221,3 +222,5 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+MIN_STARS = 0

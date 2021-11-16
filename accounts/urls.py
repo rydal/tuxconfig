@@ -15,8 +15,6 @@ class MyPasswordResetView(PasswordResetView):
 app_name = "account"
 
 urlpatterns = [
-    url(r'^login', MyLoginView.as_view(), name='login'),
-    url(r'^signup', MySignupView.as_view(), name='signup'),
-    url(r'^profile', views.profile, name='profile'),
+    path('howitworks/', views.howitworks, name='howitworks'),
 
 ]
