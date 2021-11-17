@@ -4,9 +4,8 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from contributor.models import RepoModel
-from vetting.forms import RepoForm, UserDetailsForm, ProductMetaInlineFormset
-from django.forms import inlineformset_factory
-
+from vetting.forms import RepoForm, UserDetailsForm, RepositoryURLForm
+from django.forms import modelformset_factory
 
 from django.contrib.auth.decorators import user_passes_test
 
@@ -15,14 +14,20 @@ from vetting.models import SignedOff, VettingDetails, RepositoryURL
 from django.contrib import messages
 @user_passes_test(lambda u: u.groups.filter(name='vetting').exists())
 def dashboard(request):
-
-
-    AnswerFormSet = inlineformset_factory(RepoModel,RepositoryURL, formset=ProductMetaInlineFormset, fields=['discussion_url'],
+    repo_url = RepoModel()
+    repo_url_form = RepoForm(instance=repo_url) # setup a form for the parent
+    AnswerFormSet = modelformset_factory(model=RepoModel, fields=['discussion_url','id'],
                                          form=RepoForm, extra=False, can_delete=False
                                          )
+
+    formset = RepositoryURLForm(instance=repo_url)
+
+    repos = RepoModel.objects.all().order_by("created")
+
     if request.POST:
+        repo_url_form = RepositoryURLForm(request.POST)
         answer_formset = AnswerFormSet(request.POST)
-        print (answer_formset)
+
 
         if "upvote" in request.POST:
             pk =  request.POST.get("upvote")
@@ -44,17 +49,26 @@ def dashboard(request):
             except:
                 SignedOff(contributor=request.user,repo_model=repo_model,downvoted=True).save()
                 repo_model.save()
-        elif answer_formset.is_valid():
 
-            for answer_form in answer_formset:
-                discussion_url = answer_form.cleaned_data.get("discussion_url")
-                RepositoryURL(repo_model_id=answer_form.id,contributor=request.user,discussion_url=discussion_url).save()
-        else:
-            messages.error(request,json.dumps(answer_formset.errors))
-    repos = RepoModel.objects.all().order_by("created")
+        if answer_formset.is_valid():
+            print ("Answer formset valid")
+            for answer in answer_formset:
+                id = answer.initial['id']
 
+                try:
+
+                    repository = RepoModel.objects.get(id=id)
+                    print(repository)
+                    r = RepositoryURL(contributor=request.user,repo_model=repository,discussion_url=answer.cleaned_data.get('discussion_url'))
+                    r.save()
+                except RepoModel.DoesNotExist:
+
+                    pass
+    for repo in repos:
+        repo.urls = RepositoryURL.objects.get(repo_model=repo)
     repositories_formset = AnswerFormSet(queryset=repos)
-    return render(request,"dashboard.html",{"repositories" : repositories_formset })
+
+    return render(request,"dashboard.html",{"repositories" : repositories_formset, "repo_url_form" : repo_url_form })
 
 @user_passes_test(lambda u: u.groups.filter(name='vetting').exists())
 def add_user_details(request):

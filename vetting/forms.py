@@ -11,10 +11,10 @@ class RepositoryURLForm(forms.ModelForm):
         model = RepositoryURL
         fields = ('discussion_url',)
 
-ProductMetaInlineFormset = inlineformset_factory(
+RepositoryURLFormset = inlineformset_factory(
     RepoModel,
     RepositoryURL,
-    form=RepositoryURLForm,
+    fields=["discussion_url",   'id'],
     extra=0,
     can_delete=False
 

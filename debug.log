@@ -8253,3 +8253,492 @@ INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting
 INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
 INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
 INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /accounts/profile/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/accounts/views.py", line 37, in profile
+    if request.user.groups.all()[0].name == "github":
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/db/models/query.py", line 318, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 55, in dashboard
+    formset = RepositoryURLFormset(instance=repos)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/forms/models.py", line 910, in __init__
+    if self.instance.pk is not None:
+AttributeError: 'QuerySet' object has no attribute 'pk'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 55, in dashboard
+    formset = RepositoryURLFormset(instance=author_form)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/forms/models.py", line 910, in __init__
+    if self.instance.pk is not None:
+AttributeError: 'RepoForm' object has no attribute 'pk'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/forms.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/forms.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 53, in dashboard
+    formset = RepositoryURLFormset(instance=author_form)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/forms/models.py", line 910, in __init__
+    if self.instance.pk is not None:
+AttributeError: 'RepoForm' object has no attribute 'pk'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/forms.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 20, in dashboard
+    AnswerFormSet = modelformset_factory(model=RepoModel, fields=['discussion_url'],
+NameError: name 'modelformset_factory' is not defined
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 23, in dashboard
+    formset = AnswerFormSet(instance=repo_url)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/forms/models.py", line 581, in __init__
+    super().__init__(**{'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix, **kwargs})
+TypeError: __init__() got an unexpected keyword argument 'instance'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 23, in dashboard
+    formset = AnswerFormSet(instance=repo_url)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/forms/models.py", line 581, in __init__
+    super().__init__(**{'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix, **kwargs})
+TypeError: __init__() got an unexpected keyword argument 'instance'
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 23, in dashboard
+    formset = AnswerFormSet(instance=repo_url)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/forms/models.py", line 581, in __init__
+    super().__init__(**{'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix, **kwargs})
+TypeError: __init__() got an unexpected keyword argument 'instance'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/forms.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/forms.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/forms.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 54, in dashboard
+    formset = AnswerFormSet(request.POST, request.FILES, instance=created_repo_url_form)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/forms/models.py", line 581, in __init__
+    super().__init__(**{'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix, **kwargs})
+TypeError: __init__() got an unexpected keyword argument 'instance'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 54, in dashboard
+    formset = AnswerFormSet(request.POST, request.FILES, instance=created_repo_url_form)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/forms/models.py", line 581, in __init__
+    super().__init__(**{'data': data, 'files': files, 'auto_id': auto_id, 'prefix': prefix, **kwargs})
+TypeError: __init__() got an unexpected keyword argument 'instance'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 54, in dashboard
+    url_form = RepositoryURLForm(request.POST,instance=answer_formset)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/forms/models.py", line 302, in __init__
+    object_data = model_to_dict(instance, opts.fields, opts.exclude)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/forms/models.py", line 85, in model_to_dict
+    opts = instance._meta
+AttributeError: 'RepoModelFormFormSet' object has no attribute '_meta'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 55, in dashboard
+    url_form = RepositoryURLForm(request.POST,instance=author_form)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/forms/models.py", line 302, in __init__
+    object_data = model_to_dict(instance, opts.fields, opts.exclude)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/forms/models.py", line 87, in model_to_dict
+    for f in chain(opts.concrete_fields, opts.private_fields, opts.many_to_many):
+AttributeError: 'ModelFormOptions' object has no attribute 'concrete_fields'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 56, in dashboard
+    print(answer.cleaned_data('id') + "eh?")
+TypeError: 'dict' object is not callable
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 56, in dashboard
+    print(answer.cleaned_data('id'))
+TypeError: 'dict' object is not callable
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 56, in dashboard
+    id = answer.id
+AttributeError: 'RepoModelForm' object has no attribute 'id'
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 57, in dashboard
+    print(answer_formset.cleaned_data.get("id"))
+AttributeError: 'list' object has no attribute 'get'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 56, in dashboard
+    print(answer.initial.id)
+AttributeError: 'dict' object has no attribute 'id'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 56, in dashboard
+    print(answer.initial.id)
+AttributeError: 'dict' object has no attribute 'id'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 62, in dashboard
+    r = RepositoryURL(contributor=request.user,repo_model=repository,discussion_url=answer.initital['discussion_url'])
+AttributeError: 'RepoModelForm' object has no attribute 'initital'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/venv/lib/python3.9/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py", line 69, in dashboard
+    repo.save(commit=False)
+TypeError: save() got an unexpected keyword argument 'commit'
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+WARNING:django.request:Not Found: /pwa-worker.js
+INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
