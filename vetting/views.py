@@ -15,13 +15,13 @@ from django.contrib import messages
 @user_passes_test(lambda u: u.groups.filter(name='vetting').exists())
 def dashboard(request):
 
-    repos = RepoModel.objects.filter(upvotes__lt=4 ).order_by("created")
+    repos = RepoModel.objects.all().order_by("created")
     AnswerFormSet = modelformset_factory(model=RepoModel, fields=['discussion_url'],
                                          form=RepoForm, extra=False, can_delete=False
                                          )
     if request.POST:
         answer_formset = AnswerFormSet(request.POST)
-
+        print (answer_formset)
 
         if "upvote" in request.POST:
             pk =  request.POST.get("upvote")
@@ -29,25 +29,21 @@ def dashboard(request):
             repo_model.upvotes = repo_model.upvotes + 1
             SignedOff(contributor=request.user,repo_model=repo_model,upvoted=True).save()
             repo_model.save()
-        if "downvote" in request.POST:
+        elif "downvote" in request.POST:
             pk =  request.POST.get("downvote")
             repo_model = RepoModel.objects.get(id=pk)
             repo_model.downvotes = repo_model.downvotes + 1
             SignedOff(contributor=request.user,repo_model=repo_model,downvoted=True).save()
             repo_model.save()
-        for answer_form in answer_formset:
-            print("VALID")
-            if answer_form.is_valid():
-                git_repo = answer_form.cleaned_data.get("git_repo")
-                git_username = answer_form.cleaned_data.get("git_username")
-                git_commit = answer_form.cleaned_data.get("git_commit")
-                print(git_repo + " " + git_username + " " + git_commit + "EH?")
-                repo_model = RepoModel.objects.get(git_repo=git_repo,git_username=git_username,git_commit=git_commit)
-                repo_model.discussion_url = answer_form.cleaned_data.get("discussion_url")
-                repo_model.save()
-            else:
+        elif answer_formset.is_valid():
 
-                messages.error(request,json.dumps(answer_formset.errors))
+            for answer_form in answer_formset:
+                    print("VALID")
+                    if answer_form.is_valid():
+                        answer_form.save()
+                    else:
+
+                        messages.error(request,json.dumps(answer_formset.errors))
 
     repositories_formset = AnswerFormSet(queryset=repos)
     return render(request,"dashboard.html",{"repositories" : repositories_formset })

@@ -7585,3 +7585,309 @@ INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting
 INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
 INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
 INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 46, in dashboard
+    print(git_repo + " " + git_username + " " + git_commit + "EH?")
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'HiddenInput'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 44, in dashboard
+    repo_model = RepoModel.objects.get(id=git_repo_id)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 424, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.forms.widgets.HiddenInput object at 0x7f41b5189a60>.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'HiddenInput'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 44, in dashboard
+    repo_model = RepoModel.objects.get(id=answer_form.id)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 424, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.forms.widgets.HiddenInput object at 0x7f1926851a60>.
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/models.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 19, in dashboard
+    AnswerFormSet = modelformset_factory(model=RepoModel, fields=['discussion_url'],
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/models.py", line 884, in modelformset_factory
+    form = modelform_factory(model, form=form, fields=fields, exclude=exclude,
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/models.py", line 563, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/forms/models.py", line 276, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (discussion_url) specified for RepoModel
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 54, in dashboard
+    repo.vetting_urls = VettingURL.objects.filter(repo_model=repo)
+NameError: name 'VettingURL' is not defined
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/forms.py changed, reloading.
+WARNING:django.request:Not Found: /user/
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/1/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 31, in check_device_exists
+    result = repositories[version]
+IndexError: list index out of range
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811/0/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: check_device_exists() got an unexpected keyword argument 'version'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/urls.py changed, reloading.
+WARNING:django.request:Not Found: /user/get_device/0BDA:A811/
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 35, in check_device_exists
+    return JsonResponse(json.dumps(repositories_available))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/http/response.py", line 596, in __init__
+    raise TypeError(
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 35, in check_device_exists
+    return JsonResponse(json.dumps(repositories_available))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/http/response.py", line 596, in __init__
+    raise TypeError(
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/models.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: contributor_repomodel.stars
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 24, in check_device_exists
+    for device in devices:
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: contributor_repomodel.stars
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 34, in check_device_exists
+    repositories_available.append({"clone_url" : clone_url, "stars" : clone_url.stars })
+AttributeError: 'str' object has no attribute 'stars'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 37, in check_device_exists
+    return JsonResponse(json.dumps(repositories_available))
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/http/response.py", line 596, in __init__
+    raise TypeError(
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 37, in check_device_exists
+    return JsonResponse(json.dumps(repositories_available,safe))
+NameError: name 'safe' is not defined
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /user/get_device/0BDA:A811
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 37, in check_device_exists
+    return JsonResponse(json.dumps(repositories_available,safe))
+NameError: name 'safe' is not defined
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_contributor/23/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 50, in get_user_details
+    sign_off_user = SignedOff.objects.filter(repo_model=model).order_by("?").first().contributor.user
+AttributeError: 'User' object has no attribute 'user'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/get_contributor/23/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/user/views.py", line 51, in get_user_details
+    print (sign_off_object.user)
+AttributeError: 'User' object has no attribute 'user'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/user/views.py changed, reloading.

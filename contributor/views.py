@@ -31,7 +31,7 @@ def profile(request):
                 if error is not None:
                     messages.error(request,error)
                 else:
-                    repo_model = RepoModel(contributor=request.user,git_repo=git_repo,git_username=s.extra_data['login'],git_commit=latest_commit['sha'],module_name=module_config.module_id,upvotes=0,downvotes=0,signed_off=False)
+                    repo_model = RepoModel(contributor=request.user,git_repo=git_repo,git_username=s.extra_data['login'],git_commit=latest_commit['sha'],module_name=module_config.module_id,upvotes=0,downvotes=0,stars=module_config.stars,signed_off=False)
                     repo_model.save()
                     for device in module_config.device_ids:
                         Devices(contributor=request.user,device_id=device,repo_model=repo_model).save()
@@ -130,7 +130,7 @@ def check_tuxconfig(owner,repo):
                 error = "Device id must be of format nnnn:nnnn"
                 return None, error
             devices.append(device)
-        module_config = Moduleconfig(devices,module,dependencies,version)
+        module_config = Moduleconfig(devices,module,dependencies,version,stars)
         return module_config , None
 
 
@@ -142,11 +142,12 @@ def get_stars(owner,repo):
 
 class Moduleconfig:
 
-    def __init__(self, device_ids, module_id,dependencies,version):
+    def __init__(self, device_ids, module_id,dependencies,version,stars):
         self.device_ids = device_ids
         self.module_id = module_id
         self.dependencies = dependencies
         self.version = version
+        self.stars = stars
 
 
 

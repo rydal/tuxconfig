@@ -6,6 +6,7 @@ from vetting.models import VettingDetails
 
 class RepoForm(forms.ModelForm):
     id = forms.HiddenInput()
+    discussion_url=forms.URLField()
 
     class Meta:
         model = RepoModel
