@@ -1,16 +1,32 @@
+from vetting.models import VettingDetails, RepositoryURL
+
 from django import forms
+from django.forms import inlineformset_factory
+from .models import RepoModel, RepositoryURL
 
-from contributor.models import RepoModel
-from vetting.models import VettingDetails
 
+
+class RepositoryURLForm(forms.ModelForm):
+    class Meta:
+        model = RepositoryURL
+        fields = ('discussion_url',)
+
+ProductMetaInlineFormset = inlineformset_factory(
+    RepoModel,
+    RepositoryURL,
+    form=RepositoryURLForm,
+    extra=0,
+    can_delete=False
+
+)
 
 class RepoForm(forms.ModelForm):
-    id = forms.HiddenInput()
+
     discussion_url=forms.URLField()
 
     class Meta:
-        model = RepoModel
-        fields = ('discussion_url',"id")
+        model = RepositoryURL
+        fields = ('discussion_url',)
 
 
 class UserDetailsForm(forms.ModelForm):

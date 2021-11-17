@@ -1,7 +1,7 @@
 {% extends "accounts/base.html" %} {% load crispy_forms_tags %}
 
 
-{% block title %} My Take Out {% endblock %}
+{% block title %} Tuxconfig {% endblock %}
 {%  load static %}
 
 
@@ -24,7 +24,11 @@
         <p>Module name: {{ repo.instance.module_name }}</p>
         <p>Upvotes: {{  repo.instance.upvotes }}</p>
         <p>Downvotes: {{  repo.instance.downvotes }}</p>
-        <p> {{  repo }}</p>
+        {{ repo.discussion_url }}
+
+
+        <br>
+
         <button class="btn btn-primary" type="submit">Add / set discussion url.</button><br>
         <br>
         <button type="submit" value="{{  repo.instance.id }}" name="upvote">
@@ -39,6 +43,9 @@
         {%  empty %}
         <p class="alert alert-warning">No modules to sign off right now</p>
 
+        {% for hidden in repo.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
     {%  endfor %}
 
         {%  csrf_token %}

@@ -4,19 +4,20 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from contributor.models import RepoModel
-from vetting.forms import RepoForm, UserDetailsForm
-from django.forms import modelformset_factory
+from vetting.forms import RepoForm, UserDetailsForm, ProductMetaInlineFormset
+from django.forms import inlineformset_factory
+
 
 from django.contrib.auth.decorators import user_passes_test
 
-from vetting.models import SignedOff, VettingDetails
+from vetting.models import SignedOff, VettingDetails, RepositoryURL
 
 from django.contrib import messages
 @user_passes_test(lambda u: u.groups.filter(name='vetting').exists())
 def dashboard(request):
 
-    repos = RepoModel.objects.all().order_by("created")
-    AnswerFormSet = modelformset_factory(model=RepoModel, fields=['discussion_url'],
+
+    AnswerFormSet = inlineformset_factory(RepoModel,RepositoryURL, formset=ProductMetaInlineFormset, fields=['discussion_url'],
                                          form=RepoForm, extra=False, can_delete=False
                                          )
     if request.POST:
@@ -27,23 +28,30 @@ def dashboard(request):
             pk =  request.POST.get("upvote")
             repo_model = RepoModel.objects.get(id=pk)
             repo_model.upvotes = repo_model.upvotes + 1
-            SignedOff(contributor=request.user,repo_model=repo_model,upvoted=True).save()
-            repo_model.save()
+            try:
+                SignedOff.objects.get(contributor=request.user,repo_model=repo_model)
+                messages.error(request,"You have already voted on this repository")
+            except:
+                SignedOff(contributor=request.user,repo_model=repo_model,upvoted=True).save()
+                repo_model.save()
         elif "downvote" in request.POST:
             pk =  request.POST.get("downvote")
             repo_model = RepoModel.objects.get(id=pk)
             repo_model.downvotes = repo_model.downvotes + 1
-            SignedOff(contributor=request.user,repo_model=repo_model,downvoted=True).save()
-            repo_model.save()
+            try:
+                SignedOff.objects.get(contributor=request.user,repo_model=repo_model)
+                messages.error(request,"You have already voted on this repository")
+            except:
+                SignedOff(contributor=request.user,repo_model=repo_model,downvoted=True).save()
+                repo_model.save()
         elif answer_formset.is_valid():
 
             for answer_form in answer_formset:
-                    print("VALID")
-                    if answer_form.is_valid():
-                        answer_form.save()
-                    else:
-
-                        messages.error(request,json.dumps(answer_formset.errors))
+                discussion_url = answer_form.cleaned_data.get("discussion_url")
+                RepositoryURL(repo_model_id=answer_form.id,contributor=request.user,discussion_url=discussion_url).save()
+        else:
+            messages.error(request,json.dumps(answer_formset.errors))
+    repos = RepoModel.objects.all().order_by("created")
 
     repositories_formset = AnswerFormSet(queryset=repos)
     return render(request,"dashboard.html",{"repositories" : repositories_formset })
@@ -66,7 +74,6 @@ def add_user_details(request):
                 vetting_details.name = user_details.cleaned_data.get("name")
                 vetting_details.save()
             except VettingDetails.DoesNotExist:
-
              vetting_user = user_details.save(commit=False)
              vetting_user.user = request.user
              vetting_user.save()

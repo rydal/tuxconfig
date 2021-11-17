@@ -23,6 +23,20 @@ class SignedOff(models.Model):
     downvoted = models.BooleanField(default=False)
     objects = models.Manager()
 
+class RepositoryURL(models.Model):
+    contributor = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        related_name="repository_url_to_user",
+        on_delete=models.CASCADE,
+    )
+    id = models.AutoField(primary_key=True)
+    repo_model = models.ForeignKey(
+        RepoModel,
+        related_name="repository_url_to_repo",
+        on_delete=models.CASCADE,
+    )
+    discussion_url = models.CharField(max_length=240)
+
 
 class VettingDetails(models.Model):
     user = models.OneToOneField(
