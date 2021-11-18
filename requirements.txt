@@ -15,8 +15,6 @@ django-bootstrap5==21.1
 django-countries==7.2.1
 django-crispy-forms==1.13.0
 Django-stackoverflow==0.1.7
-gitdb==4.0.9
-GitPython==3.1.24
 gunicorn==20.1.0
 httplib2==0.20.2
 idna==2.5
