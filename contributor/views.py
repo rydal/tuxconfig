@@ -120,11 +120,10 @@ def check_tuxconfig(owner,repo):
     else:
         error = "tuxconfig_module not present"
         return None, error
-    if "dependencies" in result:
-        dependencies  = result['dependencies']
-    else:
-        error = "dependencies not present"
-        return None, error
+    if "debian_dependencies" in result:
+        debain_dependencies  = result['debian_dependencies']
+    if "redhat_dependencies" in result:
+        redhat_dependencies  = result['redhat_dependencies']
     if "version" in result:
         version = result['version']
     else:
@@ -145,7 +144,7 @@ def check_tuxconfig(owner,repo):
                 error = "Device id must be of format nnnn:nnnn"
                 return None, error
             devices.append(device)
-        module_config = Moduleconfig(devices,module,dependencies,version,stars)
+        module_config = Moduleconfig(devices,module,debian_dependencies,redhat_dependencies,version,stars)
         return module_config , None
 
 
@@ -157,12 +156,14 @@ def get_stars(owner,repo):
 
 class Moduleconfig:
 
-    def __init__(self, device_ids, module_id,dependencies,version,stars):
+    def __init__(self, device_ids, module_id,debian_dependencies,redhat_dependencies,version,stars):
         self.device_ids = device_ids
         self.module_id = module_id
-        self.dependencies = dependencies
+        self.debian_dependencies = debian_dependencies
         self.version = version
         self.stars = stars
+        self.redhat_dependencies = redhat_dependencies
+
 
 
 
