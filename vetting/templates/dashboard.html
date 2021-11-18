@@ -12,7 +12,7 @@
 
 
     <h1>Sign off on module:</h1>
-    <form method="post">
+    <form method="post" id="repo_form">
         {{ repositories.management_form }}
         {%  for repo in repositories %}
 
@@ -20,25 +20,19 @@
             {%  elif repo.downvotes > 4 %} <p class="alert alert-danger">Verified as unsafe</p>{%  else %}
                 <p class="alert alert-warning">To be verified</p>
             {%  endif %}
-            <a href="https://www.github.com/{{  repo.instance.git_username }}/{{  repo.instance.git_repo }}/commit/{{ repo.instance.git_commit }}" target="_blank" >https://www.github.com/{{  repo.instance.git_username }}/{{  repo.instance.git_repo }}/{{  repo.instance.git_commit }}</a>
-            <p>Module name: {{ repo.instance.module_name }}</p>
-            <p>Upvotes: {{  repo.instance.upvotes }}</p>
-            <p>Downvotes: {{  repo.instance.downvotes }}</p>
-            {%  for repository_url in  repo.urls %}
-                {{ repository_url }}
-            {% endfor %}
-            {{ repo.discussion_url }}
-            {{  repo.id }}
+            <a href="https://www.github.com/{{  repo.git_username }}/{{  repo.git_repo }}/commit/{{ repo.git_commit }}" target="_blank" >https://www.github.com/{{  repo.git_username }}/{{  repo.git_repo }}/{{  repo.git_commit }}</a>
+            <p>Module name: {{ repo.module_name }}</p>
+            <p>Upvotes: {{  repo.upvotes }}</p>
+            <p>Downvotes: {{  repo.downvotes }}</p>
+            <p><A href="{{ repo.discussion_url  }}">{{ repo.discussion_url  }}</A></p>
 
+            {{ repo_url_form }}
 
             <br>
-
-            <button class="btn btn-primary" type="submit">Add / set discussion url.</button><br>
-            <br>
-            <button type="submit" value="{{  repo.instance.id }}" name="upvote">
+            <button type="submit" value="{{  repo.id }}" name="upvote">
                 <img src="{% static "up_button.png" %}" />
             </button>
-            <button type="submit" value="{{  repo.instance.id }}" name="downvote">
+            <button type="submit" value="{{  repo.id }}" name="downvote">
                 <img src="{% static "down_button.png" %}" />
             </button>
 
@@ -53,7 +47,5 @@
 
 
     </form>
-
-
 
 {% endblock %}

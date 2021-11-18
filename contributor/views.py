@@ -6,26 +6,28 @@ from django.contrib.auth.decorators import login_required
 from allauth.socialaccount.models import SocialAccount
 
 from tuxconfig_django import settings
+from .forms import RepositoryURLForm
 from .models import RepoModel, Devices
 from django.contrib import messages
 import  requests
 from django.contrib.auth.decorators import user_passes_test
-
+from django.forms.models import modelformset_factory
 @login_required
 def profile(request):
+    RepoFormSet = modelformset_factory(RepoModel, form=RepositoryURLForm,extra=0,can_delete=0)
     if request.POST:
         if "add_repository" in request.POST:
             repo = request.POST['add_repository']
             s = SocialAccount.objects.get(user_id=request.user.pk)
             try:
-                latest_commit = get_latest_commit(s.extra_data['login'],repo.rsplit('/', 1)[-1])
+                repo, latest_commit = get_latest_commit(s.extra_data['login'],repo.rsplit('/', 1)[-1])
                 RepoModel.objects.get(contributor=request.user,git_repo=repo,git_commit=latest_commit['sha'])
 
                 messages.error(request,"Commit already imported.")
 
             except RepoModel.DoesNotExist:
 
-                latest_commit = get_latest_commit(s.extra_data['login'],repo.rsplit('/', 1)[-1])
+                repo, latest_commit = get_latest_commit(s.extra_data['login'],repo.rsplit('/', 1)[-1])
                 module_config , error =  check_tuxconfig(s.extra_data['login'],repo.rsplit('/', 1)[-1])
                 git_repo = repo.rsplit('/', 1)[-1]
                 if error is not None:
@@ -37,7 +39,7 @@ def profile(request):
                         Devices(contributor=request.user,device_id=device,repo_model=repo_model).save()
                     messages.success(request,"Repository imported")
 
-    if "delete_repository" in request.POST:
+    elif "delete_repository" in request.POST:
         id = request.POST['delete_repository']
         s = SocialAccount.objects.get(user_id=request.user.pk)
         try:
@@ -51,18 +53,28 @@ def profile(request):
         except RepoModel.DoesNotExist:
             messages.error(request,"Repository not found")
 
+        formset = RepoFormSet(request.POST)
+        if formset.is_valid():
+            formset.save()
+        else:
+            messages.error(request,json.dumps(formset.errors))
 
 
+    try:
+        social_id = SocialAccount.objects.get(user_id=request.user.pk)
+        git_user_details = social_id.extra_data['url']
 
+        result = get_repos(git_user_details)
 
-    social_id = SocialAccount.objects.get(user_id=request.user.pk)
-    git_user_details = social_id.extra_data['url']
-    result = get_repos(git_user_details)
-
-    live_repos = RepoModel.objects.filter(contributor=request.user)
-    for repo in live_repos:
-        repo.devices =  Devices.objects.filter(repo_model=repo)
-    return render(request, "repos.html", {"live_repos" : live_repos , "repo_list" : result })
+        live_repos = RepoModel.objects.filter(contributor=request.user)
+        for repo in live_repos:
+            repo.devices =  Devices.objects.filter(repo_model=repo)
+    except SocialAccount.DoesNotExist:
+        messages.error(request,"Cannot find you using auth.")
+        live_repos = None
+        result = None
+    repo_form_set = RepoFormSet(queryset=live_repos)
+    return render(request, "repos.html", {"live_repos" : repo_form_set , "repo_list" : result })
 
 def get_repos(username):
     print ("USERNAME" + username)
@@ -76,7 +88,7 @@ def get_latest_commit(owner, repo):
     url = 'https://api.github.com/repos/{owner}/{repo}/commits'.format(owner=owner, repo=repo)
     response = urllib.request.urlopen(url).read()
     data = json.loads(response.decode())
-    return data[0]
+    return repo, data[0]
 
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
@@ -88,7 +100,10 @@ def check_tuxconfig(owner,repo):
         validate(url)
     except ValidationError:
         return "Tuxconfig file does not exist"
-    page = str(urllib.request.urlopen(url).read(),"utf-8")
+    try:
+        page = str(urllib.request.urlopen(url).read(),"utf-8")
+    except:
+        return  None, "Cannot find tuxconfig file"
     page = page.replace("\\n","")
     page = page.replace("\"","")
     result = dict(re.findall(r'(\S+)=(".*?"|\S+)', page))

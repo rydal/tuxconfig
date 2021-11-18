@@ -12,11 +12,14 @@ from django.contrib.auth.decorators import user_passes_test
 from vetting.models import SignedOff, VettingDetails, RepositoryURL
 
 from django.contrib import messages
+from django.http import JsonResponse
+
+
 @user_passes_test(lambda u: u.groups.filter(name='vetting').exists())
 def dashboard(request):
     repo_url = RepoModel()
-    repo_url_form = RepoForm(instance=repo_url) # setup a form for the parent
-    AnswerFormSet = modelformset_factory(model=RepoModel, fields=['discussion_url','id'],
+    repo_url_form = RepoForm(instance=repo_url)  # setup a form for the parent
+    AnswerFormSet = modelformset_factory(model=RepoModel, fields=['discussion_url', 'id'],
                                          form=RepoForm, extra=False, can_delete=False
                                          )
 
@@ -28,51 +31,35 @@ def dashboard(request):
         repo_url_form = RepositoryURLForm(request.POST)
         answer_formset = AnswerFormSet(request.POST)
 
-
         if "upvote" in request.POST:
-            pk =  request.POST.get("upvote")
+            pk = request.POST.get("upvote")
             repo_model = RepoModel.objects.get(id=pk)
             repo_model.upvotes = repo_model.upvotes + 1
             try:
-                SignedOff.objects.get(contributor=request.user,repo_model=repo_model)
-                messages.error(request,"You have already voted on this repository")
+                SignedOff.objects.get(contributor=request.user, repo_model=repo_model)
+                messages.error(request, "You have already voted on this repository")
             except:
-                SignedOff(contributor=request.user,repo_model=repo_model,upvoted=True).save()
+                SignedOff(contributor=request.user, repo_model=repo_model, upvoted=True).save()
                 repo_model.save()
         elif "downvote" in request.POST:
-            pk =  request.POST.get("downvote")
+            pk = request.POST.get("downvote")
             repo_model = RepoModel.objects.get(id=pk)
             repo_model.downvotes = repo_model.downvotes + 1
             try:
-                SignedOff.objects.get(contributor=request.user,repo_model=repo_model)
-                messages.error(request,"You have already voted on this repository")
+                SignedOff.objects.get(contributor=request.user, repo_model=repo_model)
+                messages.error(request, "You have already voted on this repository")
             except:
-                SignedOff(contributor=request.user,repo_model=repo_model,downvoted=True).save()
+                SignedOff(contributor=request.user, repo_model=repo_model, downvoted=True).save()
                 repo_model.save()
 
-        if answer_formset.is_valid():
-            print ("Answer formset valid")
-            for answer in answer_formset:
-                id = answer.initial['id']
-
-                try:
-
-                    repository = RepoModel.objects.get(id=id)
-                    print(repository)
-                    r = RepositoryURL(contributor=request.user,repo_model=repository,discussion_url=answer.cleaned_data.get('discussion_url'))
-                    r.save()
-                except RepoModel.DoesNotExist:
-
-                    pass
     for repo in repos:
-        repo.urls = RepositoryURL.objects.get(repo_model=repo)
-    repositories_formset = AnswerFormSet(queryset=repos)
+        repo.entry_set = RepositoryURL.objects.filter(repo_model=repo)
 
-    return render(request,"dashboard.html",{"repositories" : repositories_formset, "repo_url_form" : repo_url_form })
+    return render(request, "dashboard.html", {"repositories": repos})
+
 
 @user_passes_test(lambda u: u.groups.filter(name='vetting').exists())
 def add_user_details(request):
-
     if request.POST:
         user_details = UserDetailsForm(request.POST)
 
@@ -88,11 +75,11 @@ def add_user_details(request):
                 vetting_details.name = user_details.cleaned_data.get("name")
                 vetting_details.save()
             except VettingDetails.DoesNotExist:
-             vetting_user = user_details.save(commit=False)
-             vetting_user.user = request.user
-             vetting_user.save()
+                vetting_user = user_details.save(commit=False)
+                vetting_user.user = request.user
+                vetting_user.save()
         else:
-            messages.error(request,json.dumps(user_details.errors))
+            messages.error(request, json.dumps(user_details.errors))
     try:
         vetting_details = VettingDetails.objects.get(user=request.user)
     except VettingDetails.DoesNotExist:
@@ -101,7 +88,4 @@ def add_user_details(request):
         user_details = UserDetailsForm(instance=vetting_details)
     else:
         user_details = UserDetailsForm()
-    return render(request,"vetter_form.html",{"user_details" : user_details })
-
-
-
+    return render(request, "vetter_form.html", {"user_details": user_details})

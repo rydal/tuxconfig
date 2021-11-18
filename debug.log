@@ -8742,3 +8742,171 @@ WARNING:django.request:Not Found: /pwa-worker.js
 INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
 WARNING:django.request:Not Found: /pwa-worker.js
 INFO:django.utils.autoreload:/Users/robbrew/IdeaProjects/tuxconfig-django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 68, in dashboard
+    repo.urls = RepositoryURL.objects.get(repo_model=repo)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 435, in get
+    raise self.model.DoesNotExist(
+vetting.models.RepositoryURL.DoesNotExist: RepositoryURL matching query does not exist.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 69, in dashboard
+    messages.infor(request,"Added")
+AttributeError: module 'django.contrib.messages' has no attribute 'infor'
+ERROR:django.request:Internal Server Error: /vetting/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py", line 69, in dashboard
+    messages.info(request,"Added")
+AttributeError: module 'django.contrib.messages' has no attribute 'infor'
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/urls.py changed, reloading.
+ERROR:django.request:Internal Server Error: /contributor/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py", line 58, in profile
+    social_id = SocialAccount.objects.get(user_id=request.user.pk)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 435, in get
+    raise self.model.DoesNotExist(
+allauth.socialaccount.models.SocialAccount.DoesNotExist: SocialAccount matching query does not exist.
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /contributor/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py", line 22, in profile
+    RepoModel.objects.get(contributor=request.user,git_repo=repo,git_commit=latest_commit['sha'])
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/db/models/query.py", line 435, in get
+    raise self.model.DoesNotExist(
+contributor.models.RepoModel.DoesNotExist: RepoModel matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py", line 29, in profile
+    module_config , error =  check_tuxconfig(s.extra_data['login'],repo.rsplit('/', 1)[-1])
+  File "/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py", line 96, in check_tuxconfig
+    page = str(urllib.request.urlopen(url).read(),"utf-8")
+  File "/usr/lib/python3.8/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.8/urllib/request.py", line 531, in open
+    response = meth(req, response)
+  File "/usr/lib/python3.8/urllib/request.py", line 640, in http_response
+    response = self.parent.error(
+  File "/usr/lib/python3.8/urllib/request.py", line 569, in error
+    return self._call_chain(*args)
+  File "/usr/lib/python3.8/urllib/request.py", line 502, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.8/urllib/request.py", line 649, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not Found
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /contributor/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py", line 73, in profile
+    return render(request, "repos.html", {"live_repos" : repo_form_set , "repo_list" : result })
+UnboundLocalError: local variable 'repo_form_set' referenced before assignment
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /contributor/
+Traceback (most recent call last):
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py", line 68, in profile
+    result = get_repos(git_user_details)
+  File "/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py", line 82, in get_repos
+    with urllib.request.urlopen( username + "/repos") as url:
+  File "/usr/lib/python3.8/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.8/urllib/request.py", line 531, in open
+    response = meth(req, response)
+  File "/usr/lib/python3.8/urllib/request.py", line 640, in http_response
+    response = self.parent.error(
+  File "/usr/lib/python3.8/urllib/request.py", line 569, in error
+    return self._call_chain(*args)
+  File "/usr/lib/python3.8/urllib/request.py", line 502, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.8/urllib/request.py", line 649, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: rate limit exceeded
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/contributor/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/roberty/IdeaProjects/tuxconfig_django/vetting/views.py changed, reloading.
