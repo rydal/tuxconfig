@@ -53,11 +53,11 @@ def profile(request):
         except RepoModel.DoesNotExist:
             messages.error(request,"Repository not found")
 
-        formset = RepoFormSet(request.POST)
-        if formset.is_valid():
-            formset.save()
-        else:
-            messages.error(request,json.dumps(formset.errors))
+    formset = RepoFormSet(request.POST)
+    print (formset)
+    if formset.is_valid():
+        formset.save()
+
 
 
     try:
@@ -121,9 +121,13 @@ def check_tuxconfig(owner,repo):
         error = "tuxconfig_module not present"
         return None, error
     if "debian_dependencies" in result:
-        debain_dependencies  = result['debian_dependencies']
+        debian_dependencies  = result['debian_dependencies']
+    else:
+        debian_dependencies  = None
     if "redhat_dependencies" in result:
         redhat_dependencies  = result['redhat_dependencies']
+    else:
+        redhat_dependencies  = None
     if "version" in result:
         version = result['version']
     else:

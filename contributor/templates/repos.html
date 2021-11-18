@@ -11,7 +11,7 @@
 {% block content %}
 
     <form method="post">
-    {{  live_repo.management_form }}
+    {{  live_repos.management_form }}
     <h4>Added repositories:</h4>
     {%  for repo in live_repos %}
         <p><b>Github username: </b>{{ repo.instance.git_username }}</p>
@@ -25,9 +25,12 @@
             {{  device.device_id }}
             {%  endfor %}
         <br>
+        {{  repo.id }}
 
         <p><b>Discussion url:</b>{{  repo.discussion_url }}</p>
-        <button class="btn btn-primary" name="delete_repository" value="{{ repo.instance.id }}" type="submit">Delete repository</button>
+        <p><button type="submit" class="btn btn-primary">Add / set discussion url</button></p>
+
+        <button class="btn btn-danger" name="delete_repository" value="{{ repo.instance.id }}" type="submit">Delete repository</button>
         <hr>
     {%  endfor %}
     <br>
