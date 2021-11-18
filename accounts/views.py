@@ -34,6 +34,8 @@ def login_user(sender, request, user, **kwargs):
 
 @login_required
 def profile(request):
+    if len(request.user.groups.all()) == 2:
+        return render(request,"accounts/choose_signin_type.html")
     if request.user.groups.all()[0].name == "github":
         return redirect("/contributor")
     elif request.user.groups.all()[0].name == "vetting":

@@ -11,6 +11,7 @@ app_name = "vetting"
 urlpatterns = [
     path('edit_details/', views.add_user_details, name='vetter_details'),
     path('add_discussion_url/', views.add_user_details, name='discussion_url'),
+    path('create_account/', views.account_edit, name='edit_account'),
     path('', views.dashboard, name='profile'),
 
 

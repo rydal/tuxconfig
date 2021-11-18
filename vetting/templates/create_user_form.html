@@ -1,0 +1,23 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %} Tuxconfig {% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Dashboard:</h3> {% endblock %}
+{% block content %}
+
+
+    <h1>Sign off on module:</h1>
+    <form method="post" id="repo_form">
+    {%  csrf_token %}
+    {{  form }}
+    <input type="submit" class="btn btn-primary" value="Add user">
+
+
+    </form>
+
+{% endblock %}

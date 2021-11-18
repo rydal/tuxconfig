@@ -28,6 +28,11 @@ class RepoForm(forms.ModelForm):
         model = RepositoryURL
         fields = ('discussion_url',)
 
+class CreateUserForm(forms.Form):
+    email = forms.EmailField()
+    password = forms.CharField()
+
+
 
 class UserDetailsForm(forms.ModelForm):
 

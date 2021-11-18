@@ -4,10 +4,11 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from contributor.models import RepoModel
-from vetting.forms import RepoForm, UserDetailsForm, RepositoryURLForm
+from user_model.models import User
+from vetting.forms import RepoForm, UserDetailsForm, RepositoryURLForm, CreateUserForm
 from django.forms import modelformset_factory
 
-from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import user_passes_test, login_required
 
 from vetting.models import SignedOff, VettingDetails, RepositoryURL
 
@@ -89,3 +90,30 @@ def add_user_details(request):
     else:
         user_details = UserDetailsForm()
     return render(request, "vetter_form.html", {"user_details": user_details})
+
+from django.http import HttpResponse
+
+@login_required
+def account_edit(request):
+    form = CreateUserForm()
+    if request.user.is_superuser: # just using request.user attributes
+        if request.POST:
+            form = CreateUserForm(request.POST)
+            if form.is_valid():
+                email = form.cleaned_data.get("email")
+                password = form.cleaned_data.get("password")
+                try:
+                    User.objects.get(email=email)
+                    messages.error(request,"User already exists")
+                except User.DoesNotExist:
+                    u = User.objects.create_user(email,password)
+                    u.save()
+                    messages.success(request,"User created")
+            else:
+                messages.error(request,"Form not valid")
+
+
+
+        return render(request,"create_user_form.html",{"form" : form })
+    else:
+        return HttpResponse(request,"Not a superuser")
