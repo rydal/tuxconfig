@@ -1,0 +1,45 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %} Tuxconfig {% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Repo list</h3> {% endblock %}
+{% block content %}
+
+    <form method="post">
+    {{  live_repos.management_form }}
+    <h4>Added repositories:</h4>
+    {%  for repo in live_repos %}
+        <p><b>Github username: </b>{{ repo.instance.git_username }}</p>
+        <p><b>Github repository: </b>{{  repo.instance.git_repo }}</p>
+        <p><b>Github commit: </b>{{  repo.instance.git_commit }}</p>
+        <p><b>URL:</b><A href="https://www.github.com/{{ repo.instance.git_username}}/{{  repo.instance.git_repo }}/commit/{{  repo.instance.git_commit }}">https://www.github.com/{{ repo.instance.git_username}}/{{  repo.instance.git_repo }}/commit/{{  repo.instance.git_commit }}</A> </p>
+        <p><b>Module name:</b>{{  repo.instance.module_name }}</p>
+        <p><b>Module version:</b>{{  repo.instance.module_version }}</p>
+        <p><b>Devices supported:</b></p>
+        {%  for device in repo.instance.devices %}
+            {{  device.device_id }}
+            {%  endfor %}
+        <br>
+        {{  repo.id }}
+
+        <p><b>Discussion url:</b>{{  repo.discussion_url }}</p>
+        <p><button type="submit" class="btn btn-primary">Add / set discussion url</button></p>
+
+        <button class="btn btn-danger" name="delete_repository" value="{{ repo.instance.id }}" type="submit">Delete repository</button>
+        <hr>
+    {%  endfor %}
+    <br>
+    <h4>Available repositories:</h4>
+
+    {%  for repo in repo_list %}
+        <p><b>{{  repo.html_url }}</b></p><button class="btn btn-primary" name="add_repository" value="{{ repo.html_url }}" type="submit">Import repository</button>
+    {%  endfor %}
+    {%  csrf_token %}
+    </form>
+
+{% endblock %}
