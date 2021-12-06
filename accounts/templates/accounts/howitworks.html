@@ -1,0 +1,30 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %} Tuxconfig {% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Tuxconfig:</h3> {% endblock %}
+{% block content %}
+
+    <h1>Tuxconfig device installer..</h1>
+    <p>Module installs, they're a pain. You have to find your device id, get the chipset name. clone some source code. compile it into machine code, add in into your kernel with DKMS. </p>
+    <p>Simple eh?</p>
+    <p>Can we automate this process? Can we have a system which searches for your device online, and installs the appropriate software for it?</p>
+    <p>That's what this system is all about!</p>
+    <br>
+    <p>I will build a debian package for this after some submissions, until then I'm happy to merge pull requests!  </p>
+    <p><A href="https://www.github.com/rydal/tuxconfig-python">Front end</A> </p>
+    <p><A href="https://www.github.com/rydal/tuxconfig-django">Back end</A> </p>
+    <p>If you're a developer and want to submit some drivers, follow our guide at <A href="{%  url "account:contribute" %}">How to submit drivers</A> </p>
+    Video walkthrough: <A href="https://www.youtube.com/watch?v=KjwHw1MYyFM">here</a>
+
+
+
+
+
+
+{% endblock %}

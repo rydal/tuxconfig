@@ -1,0 +1,46 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %} Tuxconfig {% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Repo list</h3> {% endblock %}
+{% block content %}
+
+    <form method="post">
+    {{  live_repos.management_form }}
+    <h4>Added repositories:</h4>
+    {%  for repo in live_repos %}
+        <p><b>Github username: </b>{{ repo.git_username }}</p>
+        <p><b>Github repository: </b>{{  repo.git_repo }}</p>
+        <p><b>Github commit: </b>{{  repo.git_commit }}</p>
+        <p><b>URL:</b><A href="https://www.github.com/{{ repo.git_username}}/{{  repo.git_repo }}/commit/{{  repo.git_commit }}">https://www.github.com/{{ repo.git_username}}/{{  repo.git_repo }}/commit/{{  repo.git_commit }}</A> </p>
+        <p><b>Module name:</b>{{  repo.module_name }}</p>
+
+        <p><b>Devices supported:</b></p>
+        {%  for device in repo.devices %}
+            {{  device.device_id }}
+            {%  endfor %}
+        <br>
+        <p><b>Chipsets supported:</b></p>
+        {%  for platform in repo.platforms %}
+            {{  platform.cpu_hardware_id }}
+        {%  endfor %}
+        <br>
+
+        <button class="btn btn-danger" name="delete_repository" value="{{ repo.id }}" type="submit">Delete repository</button>
+        <hr>
+    {%  endfor %}
+    <br>
+    <h4>Available repositories:</h4>
+
+    {%  for repo in repo_list %}
+        <p><b>{{  repo.html_url }}</b></p><button class="btn btn-primary" name="add_repository" value="{{ repo.html_url }}" type="submit">Import repository</button>
+    {%  endfor %}
+    {%  csrf_token %}
+    </form>
+
+{% endblock %}

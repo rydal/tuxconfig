@@ -1,0 +1,33 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %} Tuxconfig {% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Tuxconfig:</h3> {% endblock %}
+{% block content %}
+
+<h1>Adding your repository to Tuxconfig.</h1>
+<h5>Prerequisites:</h5>
+<p>You must be using DKMS</p>
+<p>The code you submit must be on the "master" branch.</p>
+<p>Your install script should configure the Makefile for the architecture you're installing to.</p>
+<p>If not i386 or x86_64 this can be determined by the "Hardware:" variable in /proc/cpuinfo</p>
+<p>If not i386 or x86_64 check if the kernel is in 32 or 64 bit architecture.</p>
+<p>Please note we vet each repository for malware and spyware. </p>
+<br>
+<h5>Adding your repository:</h5>
+<p>Create a fie in your root folder called Tuxconfig</p>
+<p>Sample below:</p>
+
+    <p>device_ids="0bda:c811" #list of ids supported by this installer.</p>
+    <p>cpu_ids="x86_64" #list of chipsets supported by this installer, eg x86_64, i386,BCM2711 (Raspberry pi 4)</p>
+    <p>module_id="rtl8821CU" # Module id: name of your DKMS module</p>
+    <p>install_command="./dkms-install.sh" # Command to install DKMS module</p>
+    <p>test_command="./test_file.sh" # Exit status is 0 if your module is installed correctly.</p>
+
+
+{% endblock %}

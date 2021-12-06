@@ -1,0 +1,52 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %} Tuxconfig {% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Dashboard:</h3> {% endblock %}
+{% block content %}
+
+    <a href="{%  url "vetting:vetter_details" %}">Edit vetting details</a>
+    {%  url "vetting:vetter_details" %}
+
+    <h4>Sign off on module:</h4>
+    <form method="post" id="repo_form">
+        {{ repositories.management_form }}
+        {%  for repo in repositories %}
+
+            {%  if repo.upvotes > 4 %} <p class="alert alert-success">Verified as safe</p>
+            {%  elif repo.downvotes > 4 %} <p class="alert alert-danger">Verified as unsafe</p>{%  else %}
+                <p class="alert alert-warning">To be verified</p>
+            {%  endif %}
+            <a href="https://www.github.com/{{  repo.git_username }}/{{  repo.git_repo }}/commit/{{ repo.git_commit }}" target="_blank" >https://www.github.com/{{  repo.git_username }}/{{  repo.git_repo }}/{{  repo.git_commit }}</a>
+            <p>Module name: {{ repo.module_name }}</p>
+            <p>Upvotes: {{  repo.upvotes }}</p>
+            <p>Downvotes: {{  repo.downvotes }}</p>
+            <p><A href="{{ repo.discussion_url  }}">{{ repo.discussion_url  }}</A></p>
+            {{ repo_url_form }}
+
+            <br>
+            <button type="submit" value="{{  repo.id }}" name="upvote">
+                <img src="{% static "up_button.png" %}" />
+            </button>
+            <button type="submit" value="{{  repo.id }}" name="downvote">
+                <img src="{% static "down_button.png" %}" />
+            </button>
+
+            <br>
+
+        {%  empty %}
+            <p class="alert alert-warning">No modules to sign off right now</p>
+
+        {%  endfor %}
+
+        {%  csrf_token %}
+
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %} Tuxconfig {% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Tuxconfig:</h3> {% endblock %}
+{% block content %}
+
+    <h1>Easily configure your devices.</h1>
+    <p>Tuxconfig is a system to automatically configure non supported devices in Linux</p>
+    <p>Coders can submit code for our systems, our developers then vet the code to ensure it is safe</p>
+    <br>
+    <p>The application then installs the code for you.</p>
+    <br>
+    <p>Not happy with the driver you have? You can try the next best version for you system</p>
+    <p>Developer or code vetter?</p>
+    <a href="/social/login">Login</a>
+    <p>End users of this application have no need to sign in to this console.</p>
+    <br>
+    <p><A href="{% url "account:howitworks" %}">Video walkthrough and access to source code</A></p>
+    <p><A href="{% url "account:contribute" %}">How to add your repository</A></p>
+
+
+
+{% endblock %}

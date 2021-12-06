@@ -1,0 +1,74 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %} Tuxconfig {% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Dashboard:</h3> {% endblock %}
+{% block content %}
+
+    <h1> Tuxconfig, device installs made simple</h1>
+        <table style="width: 80%">
+            <colgroup>
+                <col span="1" style="width: 50%;">
+                <col span="1" style="width: 50%;">
+
+            </colgroup>
+
+    <tr>
+    <td colspan="2"><h4>This module was contributed by:</h4></td>
+    </tr>
+        <tr>
+            <td>
+                <div style="width: 100%">
+                    <img class="img-fluid" src="{{  git_user.avatar_url }}" width="80%" alt="avatar image">
+                </div>
+            </td>
+            <td><h5>{{  git_user.name }}</h5>
+                <p><b>Working for:</b></p>
+                <p>{{  git_user.company }}</p>
+                <p><b>Based in:</b></p>
+                <p>{{  git_user.location }}</p>
+                <p><b>Blog:</b></p>
+                <p>{{  git_user.blog }}</p>
+                <p><b>Located in:</b></p>
+                <p>{{  git_user.location }}</p>
+                <p><b>Bio:</b></p>
+                <p>{{  git_user.bio }}</p></td>
+        </tr>
+
+    </table>
+    <table style="width: 80%">
+        <colgroup>
+            <col span="1" style="width: 50%;">
+            <col span="1" style="width: 50%;">
+
+        </colgroup>
+        <tr>
+            <td colspan="2"><h4>This module was signed off by:</h4></td>
+        </tr>
+        <tr>
+            <td>
+                <div style="width: 100%">
+                <img class="img-fluid" src="{{  signed_off_by.avatar_url }}" width="80%" alt="avatar image">
+                </div>
+            </td>
+            <td><h5>{{  signed_off_by.name }}</h5>
+                <p><b>Working for:</b></p>
+                <p>{{  signed_off_by.company }}</p>
+                <p><b>Based in:</b></p>
+                <p>{{  signed_off_by.location }}</p>
+                <p><b>Website:</b></p>
+                <p>{{  signed_off_by.website }}</p>
+                <p><b>Bio:</b></p>
+                <p>{{  signed_off_by.bio }}</p></td>
+        </tr>
+
+    </table>
+
+
+
+{% endblock %}
