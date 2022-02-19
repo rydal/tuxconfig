@@ -14,16 +14,7 @@ import sys
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import dj_database_url
-from django.contrib.auth.models import Group, Permission
 
-new_group, created = Group.objects.get_or_create(name='github')
-permissions_list =  Permission.objects.all()
-new_group.permissions.set(permissions_list)
-
-
-new_group, created = Group.objects.get_or_create(name='vetting')
-permissions_list =  Permission.objects.all()
-new_group.permissions.set(permissions_list)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,13 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n3antl&&)bbej#q^a4klp3j!@!odjg^83q2evl3st2r!@%@!m3'
+ #removed
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,192.168.2.8").split(",")
 
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,192.168.2.8").split(",")
 LOGOUT_REDIRECT_URL = "/accounts/logout"
 
 # Application definition
@@ -72,7 +63,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'django.contrib.sites',
     "anymail",
     "tuxconfig_django",
@@ -89,7 +79,7 @@ INSTALLED_APPS = [
     "contributor",
     "django.contrib.admin",
     "user",
-    "vetting"
+    "vetting",
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 AUTH_USER_MODEL = 'user_model.User'
@@ -100,7 +90,8 @@ TEMPLATE_DIRS = [
 
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 ANYMAIL = {
-    "MAILGUN_API_KEY": "029fb51a2295d073e84c71794aac17dc-30b9cd6d-3ced6031",
+              "MAILGUN_API_KEY": os.getenv("GITHUB_CLIENT_ID")
+
 }
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
@@ -159,9 +150,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tuxconfig_django.wsgi.application'
 
-
+import dj_database_url
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+SITE_ID = 1
 
 if DEVELOPMENT_MODE is True:
     DATABASES = {
@@ -228,9 +221,6 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-SITE_ID = 1
-
-# Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
         'SCOPE': [
@@ -238,36 +228,13 @@ SOCIALACCOUNT_PROVIDERS = {
             'public_repo',
         ],
         'APP': {
-            'client_id': 'Iv1.fa2d443bb32f6eef',
-            'secret': '83bb28d8cec640f84aa965821a8a1c52eaaf5564',
+            'client_id': os.getenv("GITHUB_CLIENT_ID"),
+            'secret': os.getenv("GITHUB_CLIENT_SECRET"),
             'key': ''
         }
 
     },
-    'google': {
-        'SCOPE': [
-            'profile',
-            'email',
-        ],
-        'AUTH_PARAMS': {
-            'access_type': 'online',
-        },
-
-        'APP': {
-            'client_id': '85682093939-5sfqkm2v8ii2eg7pi75kqhete41qhcst.apps.googleusercontent.com',
-            'secret': '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',
-            'key': ''
-        }
-
-    },
-    'stackexchange': {
-        'SITE': 'stackoverflow',
-        'APP': {
-            'client_id': '21283',
-            'secret': 'ivD2kRCsJUuNCIVfRJcIZg((',
-            'key': 'h)NgmMYB8roBVJWRpU)Smg(('
-        }
-    }
 }
 
 MIN_STARS = 0
+
