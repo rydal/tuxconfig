@@ -90,7 +90,8 @@ TEMPLATE_DIRS = [
 
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 ANYMAIL = {
-#removed
+    os.getenv("MAILGUN_API_KEY"),
+
 }
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
@@ -220,10 +221,19 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
-# Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
-    #removed
+    'github': {
+        'SCOPE': [
+            'read:user',
+            'public_repo',
+        ],
+        'APP': {
+            'client_id': os.getenv("GITHUB_CLIENT_ID"),
+            'secret': os.getenv("GITHUB_CLIENT_SECRET"),
+            'key': ''
+        }
+
+    },
 }
 
 MIN_STARS = 0
