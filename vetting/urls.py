@@ -14,4 +14,5 @@ urlpatterns = [
     path('create_account/', views.account_edit, name='edit_account'),
     path('', views.dashboard, name='profile'),
 
+
 ]

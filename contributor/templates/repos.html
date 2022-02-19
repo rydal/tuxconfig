@@ -14,24 +14,23 @@
     {{  live_repos.management_form }}
     <h4>Added repositories:</h4>
     {%  for repo in live_repos %}
-        <p><b>Github username: </b>{{ repo.git_username }}</p>
-        <p><b>Github repository: </b>{{  repo.git_repo }}</p>
-        <p><b>Github commit: </b>{{  repo.git_commit }}</p>
-        <p><b>URL:</b><A href="https://www.github.com/{{ repo.git_username}}/{{  repo.git_repo }}/commit/{{  repo.git_commit }}">https://www.github.com/{{ repo.git_username}}/{{  repo.git_repo }}/commit/{{  repo.git_commit }}</A> </p>
-        <p><b>Module name:</b>{{  repo.module_name }}</p>
-
+        <p><b>Github username: </b>{{ repo.instance.git_username }}</p>
+        <p><b>Github repository: </b>{{  repo.instance.git_repo }}</p>
+        <p><b>Github commit: </b>{{  repo.instance.git_commit }}</p>
+        <p><b>URL:</b><A href="https://www.github.com/{{ repo.instance.git_username}}/{{  repo.instance.git_repo }}/commit/{{  repo.instance.git_commit }}">https://www.github.com/{{ repo.instance.git_username}}/{{  repo.instance.git_repo }}/commit/{{  repo.instance.git_commit }}</A> </p>
+        <p><b>Module name:</b>{{  repo.instance.module_name }}</p>
+        <p><b>Module version:</b>{{  repo.instance.module_version }}</p>
         <p><b>Devices supported:</b></p>
-        {%  for device in repo.devices %}
+        {%  for device in repo.instance.devices %}
             {{  device.device_id }}
             {%  endfor %}
         <br>
-        <p><b>Chipsets supported:</b></p>
-        {%  for platform in repo.platforms %}
-            {{  platform.cpu_hardware_id }}
-        {%  endfor %}
-        <br>
+        {{  repo.id }}
 
-        <button class="btn btn-danger" name="delete_repository" value="{{ repo.id }}" type="submit">Delete repository</button>
+        <p><b>Discussion url:</b>{{  repo.discussion_url }}</p>
+        <p><button type="submit" class="btn btn-primary">Add / set discussion url</button></p>
+
+        <button class="btn btn-danger" name="delete_repository" value="{{ repo.instance.id }}" type="submit">Delete repository</button>
         <hr>
     {%  endfor %}
     <br>

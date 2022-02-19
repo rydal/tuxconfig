@@ -55,12 +55,8 @@ def dashboard(request):
 
     for repo in repos:
         repo.entry_set = RepositoryURL.objects.filter(repo_model=repo)
-    try:
-        vetting_details = VettingDetails.objects.get(user=request.user)
-    except VettingDetails.DoesNotExist:
-        vetting_details = None
-        messages.info(request,"Please enter your details to be recommended on our systems as a code vetter,")
-    return render(request, "dashboard.html", {"repositories": repos,"vetting_details" : vetting_details })
+
+    return render(request, "dashboard.html", {"repositories": repos})
 
 
 @user_passes_test(lambda u: u.groups.filter(name='vetting').exists())

@@ -59,14 +59,9 @@ def logout_user(request):
 def privacy(request):
     return None
 
-def contribute(request):
-    return render(request, "accounts/how_to_contribute.html")
 
 def howitworks(request):
-    return render(request, "accounts/howitworks.html")
-
-
-
+    return None
 
 def index(request):
     return render(request, "accounts/index.html")

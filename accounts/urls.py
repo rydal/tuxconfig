@@ -12,8 +12,5 @@ urlpatterns = [
     path('howitworks/', views.howitworks, name='howitworks'),
     path('login/', views.login, name='login'),
     path('profile/', views.profile, name='profile'),
-    path('contribute/', views.contribute, name='contribute'),
-    path('howitworks/', views.howitworks, name='howitworks'),
-    url(r'^logout/$', views.logout_user,  name='logout'),
-
+    url(r'^logout/$', views.logout_user,  name='logout')
 ]

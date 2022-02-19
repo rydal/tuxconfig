@@ -39,19 +39,3 @@ class Devices(models.Model):
     device_id = models.CharField(max_length=12)
     created = models.DateTimeField(auto_now_add=True)
     objects = models.Manager()
-
-class Platforms(models.Model):
-    contributor = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        related_name="platform_to_contributor",
-        on_delete=models.CASCADE,
-    )
-    id = models.AutoField(primary_key=True)
-    repo_model = models.ForeignKey(
-        RepoModel,
-        related_name="platform_to_repository",
-        on_delete=models.CASCADE,
-    )
-    cpu_hardware_id = models.CharField(max_length=40)
-    created = models.DateTimeField(auto_now_add=True)
-    objects = models.Manager()
