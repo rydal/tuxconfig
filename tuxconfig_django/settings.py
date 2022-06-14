@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,192.168.2.8").split(",")
 LOGOUT_REDIRECT_URL = "/accounts/logout"
-
+SECRET_KEY = 'django-insecure-_!(3j0c1k0yijp06wxzf!+ti$yra_tyu)wt7#4a)_n5+1d_!om'
 # Application definition
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
