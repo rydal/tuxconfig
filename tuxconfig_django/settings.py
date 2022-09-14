@@ -16,16 +16,16 @@ from django.contrib.messages import constants as messages
 import dj_database_url
 
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY') or "django-insecure-_\!(3j0c1k0yijp06wxzf\!+ti\$yra_tyu)wt7#4a)_n5+1d_\!om"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY="django-insecure-_\!(3j0c1k0yijp06wxzf\!+ti\$yra_tyu)wt7#4a)_n5+1d_\!om"
-
+ #removed
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -33,7 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,192.168.2.8").split(",")
 LOGOUT_REDIRECT_URL = "/accounts/logout"
-SECRET_KEY = 'django-insecure-_!(3j0c1k0yijp06wxzf!+ti$yra_tyu)wt7#4a)_n5+1d_!om'
+
 # Application definition
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
@@ -89,11 +89,15 @@ TEMPLATE_DIRS = [
     os.path.join(BASE_DIR, 'templates'),
 ]
 
-EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 ANYMAIL = {
-              "MAILGUN_API_KEY": os.getenv("GITHUB_CLIENT_ID")
-
+    # (exact settings here depend on your ESP...)
+    "MAILGUN_API_KEY": os.getenv("MAILGUN_API_KEY") or "029fb51a2295d073e84c71794aac17dc-30b9cd6d-3ced6031",
+    "MAILGUN_SENDER_DOMAIN": 'tuxconfig.com',  # your Mailgun domain, if needed
 }
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"  # or sendgrid.EmailBackend, or...
+DEFAULT_FROM_EMAIL = "support@tuxconfig.com"  # if you don't already have this in settings
+SERVER_EMAIL = "support@tuxconfig.com"  # ditto (default from-email for Django errors)
+
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }

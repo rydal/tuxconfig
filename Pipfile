@@ -16,7 +16,7 @@ deprecated = "==1.2.13"
 dj-database-url = "==0.5.0"
 django = "==3.2.9"
 django-allauth = "==0.45.0"
-django-anymail = "==8.4"
+django-anymail = {extras = ["mailgun"], version = "*"}
 django-bootstrap = "==0.2.4"
 django-bootstrap5 = "==21.1"
 django-countries = "==7.2.1"
