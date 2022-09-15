@@ -28,16 +28,16 @@
         {{  repo.id }}
 
         <p><b>Discussion url:</b>{{  repo.discussion_url }}</p>
-        <p><button type="submit" class="btn col-11 btn col-11-primary">Add / set discussion url</button></p>
+        <p><button type="submit" class="btn col-11 btn-primary">Add / set discussion url</button></p>
 
-        <button class="btn col-11 btn col-11-danger" name="delete_repository" value="{{ repo.instance.id }}" type="submit">Delete repository</button>
+        <button class="btn col-11 col-11-danger" name="delete_repository" value="{{ repo.instance.id }}" type="submit">Delete repository</button>
         <hr>
     {%  endfor %}
     <br>
     <h4>Available repositories:</h4>
 
     {%  for repo in repo_list %}
-        <p><b>{{  repo.html_url }}</b></p><button class="btn col-11 btn col-11-primary" name="add_repository" value="{{ repo.html_url }}" type="submit">Import repository</button>
+        <p><b>{{  repo.html_url }}</b></p><button class="btn col-11 btn-primary" name="add_repository" value="{{ repo.html_url }}" type="submit">Import repository</button>
     {%  endfor %}
     {%  csrf_token %}
     </form>
