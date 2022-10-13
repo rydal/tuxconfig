@@ -9,18 +9,8 @@
     <h1>{% trans "Sign In" %}</h1>
 
     <p>Login with Github to contribute repositories for users to install easily.</p>
-
     <a href='{{ request.scheme }}://{{ request.get_host }}/social/github/login/?process=login'> <img src="{% static 'github.jpeg' %}" alt="github"></a>
-
-    <p>Sign in as code vetter:</p>
-    <form class="login" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-        <button class="btn col-11 btn-primary" type="submit">{% trans "Sign In" %}</button>
-    </form>
+    <br>
+    <p>Anyone wondering what GitHub is, it's a code repository, allowing open source users cto build and contribute to projects.</p>
 
 {% endblock %}

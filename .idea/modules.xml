@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/tuxconfig_django.iml" filepath="$PROJECT_DIR$/tuxconfig_django.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tuxconfig.iml" filepath="$PROJECT_DIR$/.idea/tuxconfig.iml" />
     </modules>
   </component>
 </project>

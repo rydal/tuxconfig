@@ -25,12 +25,7 @@
             {{  device.device_id }}
             {%  endfor %}
         <br>
-        {{  repo.id }}
-
-        <p><b>Discussion url:</b>{{  repo.discussion_url }}</p>
-        <p><button type="submit" class="btn col-11 btn-primary">Add / set discussion url</button></p>
-
-        <button class="btn col-11 col-11-danger" name="delete_repository" value="{{ repo.instance.id }}" type="submit">Delete repository</button>
+        <button class="btn col-11 btn-danger" name="delete_repository" value="{{ repo.instance.id }}" type="submit">Delete repository</button>
         <hr>
     {%  endfor %}
     <br>

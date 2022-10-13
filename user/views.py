@@ -43,14 +43,11 @@ def get_user_details(request,repo_model):
     if repo_model is None:
         return JsonResponse({"error" : "Repo model not set"})
     model = RepoModel.objects.get(id=repo_model)
-    h = httplib2.Http()
     github_url = "https://api.github.com/users/" + model.git_username
     s = urlopen(github_url)
     respBody = json.loads(s.read())
-    sign_off_object = SignedOff.objects.filter(repo_model=model).order_by("?").first().contributor
-    sign_off_user = VettingDetails.objects.get(user=sign_off_object)
 
-    return render(request,"get_user_details.html", {"git_user" : respBody, "signed_off_by" : sign_off_user })
+    return render(request,"get_user_details.html", {"git_user" : respBody, "model" : model })
 
 
 

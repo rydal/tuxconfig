@@ -6,11 +6,12 @@ from . import views
 from allauth.account.views import SignupView, LoginView, PasswordResetView
 from django.conf.urls import url
 
-app_name = "account"
+app_name = "accounts"
 
 urlpatterns = [
-    path('howitworks/', views.howitworks, name='howitworks'),
     path('login/', views.login, name='login'),
     path('profile/', views.profile, name='profile'),
+    path('howitworks/', views.howitworks, name='howitworks'),
+    path('privacy/', views.howitworks, name='privacy'),
     url(r'^logout/$', views.logout_user,  name='logout')
 ]

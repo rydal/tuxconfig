@@ -39,24 +39,19 @@ def profile(request):
                         Devices(contributor=request.user,device_id=device,repo_model=repo_model).save()
                     messages.success(request,"Repository imported")
 
-    elif "delete_repository" in request.POST:
-        id = request.POST['delete_repository']
-        s = SocialAccount.objects.get(user_id=request.user.pk)
-        try:
-            repo = RepoModel.objects.get(contributor=request.user,id=id)
-            commit_id = repo.git_commit
-            commit_name = repo.git_repo
-            repo.delete()
+        elif "delete_repository" in request.POST:
+            id = request.POST['delete_repository']
 
-            messages.success(request, commit_name + " " + commit_id + " deleted.")
+            try:
+                repo = RepoModel.objects.get(contributor=request.user,id=id)
+                commit_id = repo.git_commit
+                commit_name = repo.git_repo
+                repo.delete()
 
-        except RepoModel.DoesNotExist:
-            messages.error(request,"Repository not found")
+                messages.success(request, commit_name + " " + commit_id + " deleted.")
 
-    formset = RepoFormSet(request.POST)
-    print (formset)
-    if formset.is_valid():
-        formset.save()
+            except RepoModel.DoesNotExist:
+                messages.error(request,"Repository not found")
 
 
 

@@ -1,0 +1,76 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %}Privacy{% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Privacy</h3> {% endblock %}
+{% block content %}
+    <h4>As a code contributor:</h4>
+    <p>Using the login with GitHub page you provide access to:</p>
+    <p>Your <b>public</b> repositories</p>
+    <p>Your GitHub public user info (under the <b>read:user</b> scope), which is freely accessible. </p>
+    <br>
+    <h4>This is my information:</h4>
+    <ul>
+    <li>"login":"rydal",</li>
+    <li>"id":4295985,</li>
+    <li>"node_id":"MDQ6VXNlcjQyOTU5ODU=",</li>
+    <li>"avatar_url":"https://avatars.githubusercontent.com/u/4295985?v=4",</li>
+    <li>"gravatar_id":"",</li>
+    <li>"url":"https://api.github.com/users/rydal",</li>
+    <li>"html_url":"https://github.com/rydal",</li>
+    <li>"followers_url":"https://api.github.com/users/rydal/followers",</li>
+    <li>"following_url":"https://api.github.com/users/rydal/following{/other_user}",</li>
+    <li>"gists_url":"https://api.github.com/users/rydal/gists{/gist_id}",</li>
+    <li>"starred_url":"https://api.github.com/users/rydal/starred{/owner}{/repo}",</li>
+    <li>"subscriptions_url":"https://api.github.com/users/rydal/subscriptions",</li>
+    <li>"organizations_url":"https://api.github.com/users/rydal/orgs",</li>
+    <li>"repos_url":"https://api.github.com/users/rydal/repos",</li>
+    <li>"events_url":"https://api.github.com/users/rydal/events{/privacy}",</li>
+    <li>"received_events_url":"https://api.github.com/users/rydal/received_events",</li>
+    <li>"type":"User",</li>
+    <li>"site_admin":false,</li>
+    <li>"name":"Rob Brew",</li>
+    <li>"company":"Rydal inc",</li>
+    <li>"blog":"www.rydalinc.org",</li>
+    <li>"location":"London / Kent",</li>
+    <li>"email":"rob@rydal.org",</li>
+    <li>"hireable":"None",</li>
+    <li>"bio":"Masters graduate in Advanced Computer Science",</li>
+    <li>"twitter_username":"None",</li>
+    <li>"public_repos":9,</li>
+    <li>"public_gists":1,</li>
+    <li>    "followers":0,</li>
+    <li>    "following":1,</li>
+    <li>    "created_at":"2013-04-29T20:18:17Z",</li>
+    <li>    "updated_at":"2022-10-08T12:43:57Z",</li>
+    <li>    "private_gists":0,</li>
+    <li>    "total_private_repos":3,</li>
+    <li>    "owned_private_repos":3,</li>
+    <li>    "disk_usage":95506,</li>
+    <li>    "collaborators":0,</li>
+    <li>    "two_factor_authentication":true,</li>
+    <li>    "plan":{</li>
+    <li>    "name":"free",</li>
+    <li>    "space":976562499,</li>
+    <li>    "collaborators":0,</li>
+    <li>    "private_repos":10000</li>
+    </ul>
+<br>
+    <p>Yours will be similar, it's publicly available on <a href="https://www.github.com">www.github.com</a></p>
+    <br>
+    <p>On the successful install of a module (device driver), we share:</p>
+    <ul>
+    <li>Your company name</li>
+    <li>Your city</li>
+    <li>Your listed blog</li>
+    <li>Yuor biography.</li>
+    <li>Your GitHub avatar</li>
+    </ul>
+    <p>Hang on? If the driver is mis installed, I'm going ot get loads of emails right?</p>
+    <p>If it installs correctly, or not, that is your decision, by adding a test script post install, you can be the judge of that.</p>
+{% endblock %}

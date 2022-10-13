@@ -1,0 +1,26 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+        {% block title %} Tuxconfig {% endblock %}
+        {%  load static %}
+
+
+
+        <link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+        {%  block heading %} <h3>Idea inception.</h3> {% endblock %}
+        {% block content %}
+<h4>How did this come about? </h4>
+            <p>I found myself doing the same thing again and again, compiling device drivers for chipsets with non supported firmware. </p>
+            <p>Windows has a device installer, for cryptographically signed drivers, so why not build that.</p>
+            <p>I first wrote this as my dissertation at Kent university, with the client in C++ (Linux is written in C++ right?) and a Java backend.</p>
+            <p>It's open source, it has to be (a lot of universities own copyright on anything you name drop to a lecturer).</p>
+            <p>Years later, I rewrote this in Python and Django (a good way to spin up websites), thanks to the amazing Mr E ;)</p>
+            <br>
+            <p>Initially, my question was, is a device driver any good? The original version asked for a user to vote on it's success.</p>
+            <p>Is the user correct though? Not each one would know if the problem was the driver or them.</p>
+            <p>Searching a way round, I clocked GitHub stars, user's of GitHub vote on an application, giving it a star.</p>
+            <p>Hang on, more stars, better the dirver is right? We'll use that.</p>
+            <p>At the same time though, we're inserting code into the Kernel (the OS core) to run and so anything, how can we be sure this is not malicious?</p>
+            <p>GitHub stars again, if a module is voted on 100 times, it must be safe right?</p>
+            <p>BINGO!</p>
+        {% endblock %}
