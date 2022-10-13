@@ -52,7 +52,8 @@ def profile(request):
 def privacy(request):
     return render(request,"accounts:privacy")
 
-
+def inception(request):
+    return render(request,"accounts:inception")
 def howitworks(request):
     return render(request,"accounts:howitworks")
 

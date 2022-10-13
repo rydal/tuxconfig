@@ -9382,3 +9382,19 @@ Traceback (most recent call last):
     raise self.error(token, msg)
 django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 19: 'block'. Looking for one of: endblock.
 WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /social/github/login/
+Traceback (most recent call last):
+  File "/mnt/hd/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/mnt/hd/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/hd/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 77, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/mnt/hd/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 112, in dispatch
+    return HttpResponseRedirect(client.get_redirect_url(auth_url, auth_params))
+  File "/mnt/hd/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/allauth/socialaccount/providers/oauth2/client.py", line 46, in get_redirect_url
+    return "%s?%s" % (authorization_url, urlencode(params))
+  File "/mnt/hd/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/utils/http.py", line 113, in urlencode
+    raise TypeError(
+TypeError: Cannot encode None for key 'client_id' in a query string. Did you mean to pass an empty string or omit the value?
+INFO:django.utils.autoreload:/mnt/hd/roberty/IdeaProjects/tuxconfig/accounts/urls.py changed, reloading.
