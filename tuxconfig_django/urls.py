@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path, include
 from django.conf.urls.static import static
 
@@ -29,7 +28,7 @@ urlpatterns = [
     path('', accounts.views.index),
     path('contributor/', include('contributor.urls')),
     path('user/', include('user.urls')),
-    path('vetting/', include('vetting.urls')),
+
 
 ] + static( settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

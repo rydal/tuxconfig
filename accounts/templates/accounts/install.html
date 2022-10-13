@@ -1,0 +1,16 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %}Install{% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Client install - how to</h3> {% endblock %}
+{% block content %}
+    <h4>Install necessary packages:</h4>
+    <p><b>DEB format:</b> apt get install dkms python3 build-essential git</p>
+    <p><b>RPM format:</b> yum install dkms python3 build-essential git</p>
+
+{% endblock %}

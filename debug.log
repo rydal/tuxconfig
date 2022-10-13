@@ -9398,3 +9398,4 @@ Traceback (most recent call last):
     raise TypeError(
 TypeError: Cannot encode None for key 'client_id' in a query string. Did you mean to pass an empty string or omit the value?
 INFO:django.utils.autoreload:/mnt/hd/roberty/IdeaProjects/tuxconfig/accounts/urls.py changed, reloading.
+INFO:django.utils.autoreload:/mnt/hd/roberty/IdeaProjects/tuxconfig/tuxconfig_django/urls.py changed, reloading.
