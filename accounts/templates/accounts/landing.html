@@ -1,0 +1,63 @@
+{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %} Tuxconfig {% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %}<h1>Easily configure your devices.</h1> {% endblock %}
+{% block content %}
+
+    <div class="card  rounded justify-content-center text-center  text-justify align-items-center  flex-column, btn-group-vertical m-1" >
+        <div class="card-title"><h4>What is this page / program about?</h4></div>
+        <div class="card-body">
+
+            <p>Tuxconfig is a system to automatically configure non supported devices in Linux</p>
+            <p>Coders can submit code for our systems, our developers then vet the code to ensure it is safe</p>
+            <br>
+            <p>The application then installs the code for you.</p>
+            <br>
+            <p>Not happy with the driver you have? You can try the next best version for you system</p>
+
+        </div>
+    </div>
+
+    <div class="card  rounded justify-content-center text-center  text-justify align-items-center  flex-column, btn-group-vertical m-1" >
+        <div class="card-title"><h4>Who made this?</h4></div>
+        <div class="card-body">
+            <img src="https://rydalinc.com/s/me.jpeg" alt="me.jpeg" style="max-height: 20vh; text-align: center">
+            <br>
+            <p>I did, my business site is at:</p>
+            <a href="https://www.rydalinc.com"><img src="{%  static 'rydalinc_banner.png' %}"> <p>www.rydalinc.com</p></a>
+
+
+            <br>
+
+            <a href="https://www.digitalocean.com/?refcode=8bb0b8ab74dd&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt="DigitalOcean Referral Badge" /></a>
+            <p>Give our server providers some love, and get &dollar;100 credit<3</p></A>
+        </div>
+    </div>
+    <div class="card  rounded justify-content-center text-center  text-justify align-items-center  flex-column, btn-group-vertical m-1" >
+        <div class="card-title"><h4>What is this about?</h4></div>
+        <div class="card-body">
+            <p>Anyone wondering what GitHub is, it's a code repository, allowing open source users cto build and contribute to projects.</p>
+            <p>Installers of this application have no need to sign in to this console.</p>
+            <br>
+            <p>What is this Linux thing anyway?</p>
+            <a href="https://opensource.com/resources/what-open-source">Open source description.</a>
+            <p>What is Linux?</p>
+            <a href="https://opensource.com/resources/linux">Linux description.</a>
+            <br>
+            <p>It's free right, that must make it naff?</p>
+            <p>Actually it's the OS for this webserver, and Android is based on it.</p>
+            <br>
+            <p>Ok, how do I get started?</p>
+            <p>In my opinion, <A href="https://www.ubuntu.com">Ubuntu</A> is a good way to get started,</p>
+            <p>Also, in my opinion, try it on a spare laptop to begin with, or buy a <A href="https://www.raspberrypi.org/">Raspberry pi</A>, or <A href="https://pallavaggarwal.in/raspberry-pi-alternatives-clones/">Raspberry pi clone</A> </p>
+        </div>
+    </div>
+
+
+{% endblock %}

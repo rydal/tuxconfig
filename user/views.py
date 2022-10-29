@@ -15,6 +15,10 @@ import httplib2
 from vetting.models import SignedOff, VettingDetails
 
 import ast
+
+from user.forms import DownloadedIdForm
+
+
 def check_device_exists(request,device_id):
     if device_id is None:
         return JsonResponse({"error" : "device id not set"})
@@ -46,9 +50,11 @@ def get_user_details(request,repo_model):
     github_url = "https://api.github.com/users/" + model.git_username
     s = urlopen(github_url)
     respBody = json.loads(s.read())
-
-    return render(request,"get_user_details.html", {"git_user" : respBody, "model" : model })
-
+    downloaded_from = DownloadedIdForm(request.POST or None)
+    if request.POST:
+        if downloaded_from.is_valid():
+            downloaded_from.save()
+    return render(request,"get_user_details.html", {"git_user" : respBody, "model" : model, "form": downloaded_from })
 
 
 

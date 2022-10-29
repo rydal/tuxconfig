@@ -8,6 +8,9 @@ from django_countries.fields import CountryField
 
 from django.conf import settings
 
+from accounts.forms import SubmitIdForm
+from accounts.models import RequestedDeviceId
+
 logging.basicConfig(filename='debug.log', level=logging.INFO)
 from allauth.account.views import SignupView, LoginView
 from django.contrib.auth import logout
@@ -59,6 +62,18 @@ def howitworks(request):
 
 def index(request):
     return render(request, "accounts/index.html")
+
+def landing(request):
+    return render(request, "accounts/landing.html")
+
+def request(request):
+    if request.POST:
+        form = SubmitIdForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    recaptcha_form = SubmitIdForm
+    return render(request, "accounts/request.html", {"submit_form" : recaptcha_form })
 
 def login(request):
     return  redirect("/social/login")

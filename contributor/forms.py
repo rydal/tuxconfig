@@ -15,4 +15,6 @@ from django_countries.widgets import CountrySelectWidget
 class RepositoryURLForm(forms.ModelForm):
     class Meta:
         model = RepoModel
-        fields = ('discussion_url',)
+        fields = ('beta',)
+
+

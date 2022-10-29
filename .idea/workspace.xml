@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e309348-a1a2-41d9-90a6-aea7801a02c9" name="Changes" comment="client testing to do.">
-      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/install.html" afterDir="false" />
+    <list default="true" id="4e309348-a1a2-41d9-90a6-aea7801a02c9" name="Changes" comment="good to go. gui on client?">
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/landing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tuxconfig.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/request_device_id.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/privacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contributor/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/contributor/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contributor/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/contributor/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contributor/templates/repos.html" beforeDir="false" afterPath="$PROJECT_DIR$/contributor/templates/repos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tuxconfig_django/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tuxconfig_django/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuxconfig_django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tuxconfig_django/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/templates/create_user_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/templates/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/templates/user_details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/templates/vetter_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetting/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/get_user_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/get_user_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +33,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -67,7 +64,7 @@
     "dart.analysis.tool.window.visible": "false",
     "last_opened_file_path": "/home/roberty/IdeaProjects/tuxconfig",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.5586207",
     "show.migrate.to.gradle.popup": "false"
@@ -75,6 +72,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/accounts/templates/accounts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/accounts/templates/accounts" />
     </key>
   </component>
@@ -105,7 +105,18 @@
       <workItem from="1665628153305" duration="660000" />
       <workItem from="1665628817843" duration="8000" />
       <workItem from="1665628991207" duration="5028000" />
-      <workItem from="1665634254087" duration="2437000" />
+      <workItem from="1665634254087" duration="2553000" />
+      <workItem from="1665785270825" duration="29000" />
+      <workItem from="1665785308844" duration="726000" />
+      <workItem from="1665786246200" duration="532000" />
+      <workItem from="1665786792607" duration="85000" />
+      <workItem from="1665786888614" duration="183000" />
+      <workItem from="1665787081464" duration="122000" />
+      <workItem from="1665787213606" duration="33000" />
+      <workItem from="1665787258293" duration="592000" />
+      <workItem from="1665878832748" duration="47000" />
+      <workItem from="1666998488523" duration="5038000" />
+      <workItem from="1667023565696" duration="2872000" />
     </task>
     <task id="LOCAL-00001" summary="getting there :)">
       <created>1665633681390</created>
@@ -121,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665634348715</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="good to go. gui on client?">
+      <created>1665672935184</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665672935184</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +171,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="getting there :)" />
     <MESSAGE value="client testing to do." />
-    <option name="LAST_COMMIT_MESSAGE" value="client testing to do." />
+    <MESSAGE value="good to go. gui on client?" />
+    <option name="LAST_COMMIT_MESSAGE" value="good to go. gui on client?" />
   </component>
 </project>

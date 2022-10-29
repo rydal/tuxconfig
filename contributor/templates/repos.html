@@ -25,7 +25,29 @@
             {{  device.device_id }}
             {%  endfor %}
         <br>
-        <button class="btn col-11 btn-danger" name="delete_repository" value="{{ repo.instance.id }}" type="submit">Delete repository</button>
+        <p><b>Available for testing:</b>{{  repo.instance.beta }}</p>
+
+        <button type="button" class="btn btn-danger col-11 btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Delete commit entry
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete commit: {{  repo.instance.git_commit }} from {{  repo.instance.git_repo }} ?</h5>
+
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary col-11" data-bs-dismiss="modal">Close</button>
+                        <button class="btn col-11 btn-danger" name="delete_repository" value="{{ repo.instance.id }}" type="submit">Delete repository</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <hr>
     {%  endfor %}
     <br>

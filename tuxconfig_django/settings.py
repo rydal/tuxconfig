@@ -79,6 +79,7 @@ INSTALLED_APPS = [
     "contributor",
     "django.contrib.admin",
     "user",
+    'captcha',
 
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
@@ -218,5 +219,8 @@ SOCIALACCOUNT_PROVIDERS = {
     },
 }
 
-MIN_STARS = 0
+MIN_STARS = 50
 
+RECAPTCHA_PUBLIC_KEY = os.getenv("RECAPTCHA_PUBLIC_KEY")
+RECAPTCHA_PRIVATE_KEY = os.getenv("RECAPTCHA_PRIVATE_KEY")
+RECAPTCHA_REQUIRED_SCORE = 0.85

@@ -14,5 +14,7 @@ urlpatterns = [
     path('howitworks/', views.howitworks, name='howitworks'),
     path('privacy/', views.howitworks, name='privacy'),
     path('inception/', views.inception, name='inception'),
+    path('landing/', views.inception, name='landing'),
+    path('request/', views.inception, name='request'),
     url(r'^logout/$', views.logout_user,  name='logout')
 ]

@@ -11,16 +11,16 @@
 {% block content %}
 
     <h1> Tuxconfig, device installs made simple</h1>
-        <table style="width: 80%">
-            <colgroup>
-                <col span="1" style="width: 50%;">
-                <col span="1" style="width: 50%;">
+    <table style="width: 80%">
+        <colgroup>
+            <col span="1" style="width: 50%;">
+            <col span="1" style="width: 50%;">
 
-            </colgroup>
+        </colgroup>
 
-    <tr>
-    <td colspan="2"><h4>This module was contributed by:</h4></td>
-    </tr>
+        <tr>
+            <td colspan="2"><h4>This module was contributed by:</h4></td>
+        </tr>
         <tr>
             <td>
                 <div style="width: 100%">
@@ -42,9 +42,9 @@
 
     </table>
     <form method="post">
-    {%  csrf_token %}
-    {{  form }}
-        <button class="btn btn-primary col-8">Mark as downloaded</button>
+        {%  csrf_token %}
+        {{  form }}
+        <button class="btn btn-primary col-8">Request this device to be added</button>
 
     </form>
 
