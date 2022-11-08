@@ -12,21 +12,22 @@ from tuxconfig_django import settings
 from django.http import JsonResponse
 import httplib2
 
-from vetting.models import SignedOff, VettingDetails
 
 import ast
 
 from user.forms import DownloadedIdForm
 
 
-def check_device_exists(request,device_id):
+def check_device_exists(request,device_id,beta=None):
     if device_id is None:
         return JsonResponse({"error" : "device id not set"})
-
-    devices = Devices.objects.filter(device_id=device_id).select_related()
+    if beta is not None and beta == "true":
+        devices = Devices.objects.filter(device_id=device_id,beta=True).select_related()
+    else:
+        devices = Devices.objects.filter(device_id=device_id).select_related()
     repositories = []
     for device in devices:
-         repositories.append(device.repo_model)  # You already have it
+         repositories.append(device.repo_model)
     if len(repositories) == 0:
         return JsonResponse({'none' : True })
     repositories_available = []
