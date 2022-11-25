@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e309348-a1a2-41d9-90a6-aea7801a02c9" name="Changes" comment="removed beta bit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/base.html" afterDir="false" />
-    </list>
+    <list default="true" id="4e309348-a1a2-41d9-90a6-aea7801a02c9" name="Changes" comment="jquery updated." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +106,7 @@
       <workItem from="1667023565696" duration="2898000" />
       <workItem from="1667866026670" duration="1806000" />
       <workItem from="1667877324014" duration="246000" />
-      <workItem from="1669366878363" duration="2276000" />
+      <workItem from="1669366878363" duration="2634000" />
     </task>
     <task id="LOCAL-00001" summary="getting there :)">
       <created>1665633681390</created>
@@ -153,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669367082015</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="jquery updated.">
+      <created>1669369192178</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669369192178</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +193,7 @@
     <MESSAGE value="request device to do." />
     <MESSAGE value="beta option enabled for clientg and server" />
     <MESSAGE value="removed beta bit" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed beta bit" />
+    <MESSAGE value="jquery updated." />
+    <option name="LAST_COMMIT_MESSAGE" value="jquery updated." />
   </component>
 </project>
