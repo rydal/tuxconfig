@@ -10,7 +10,6 @@ app_name = "accounts"
 
 urlpatterns = [
     path('login/', views.login, name='login'),
-    path('profile/', views.profile, name='profile'),
     path('howitworks/', views.howitworks, name='howitworks'),
     path('privacy/', views.howitworks, name='privacy'),
     path('inception/', views.inception, name='inception'),

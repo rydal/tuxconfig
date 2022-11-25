@@ -48,8 +48,6 @@ def logout_user(request):
         logout(request)
     return render(request,"accounts/index.html")
 
-def profile(request):
-    return render(request,"contributor:profile")
 
 def privacy(request):
     return render(request,"accounts:privacy")
