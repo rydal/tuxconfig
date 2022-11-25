@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4e309348-a1a2-41d9-90a6-aea7801a02c9" name="Changes" comment="url for get_device changed,">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +111,7 @@
       <workItem from="1667023565696" duration="2898000" />
       <workItem from="1667866026670" duration="1806000" />
       <workItem from="1667877324014" duration="246000" />
-      <workItem from="1669366878363" duration="14966000" />
+      <workItem from="1669366878363" duration="15968000" />
     </task>
     <task id="LOCAL-00001" summary="getting there :)">
       <created>1665633681390</created>

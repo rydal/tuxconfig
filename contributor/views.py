@@ -35,7 +35,7 @@ def profile(request):
                     repo_model = RepoModel(contributor=request.user,git_repo=git_repo,git_username=s.extra_data['login'],git_commit=latest_commit['sha'],module_name=module_config.module_id,upvotes=0,downvotes=0,stars=module_config.stars,signed_off=False)
                     repo_model.save()
                     for device in module_config.device_ids:
-                        Devices(contributor=request.user,device_id=device,repo_model=repo_model).save()
+                        Devices(contributor=request.user,device_id=device.lower(),repo_model=repo_model).save()
                     messages.success(request,"Repository imported")
 
         elif "delete_repository" in request.POST:
@@ -67,7 +67,7 @@ def profile(request):
         messages.error(request,"Cannot find you using auth.")
         live_repos = None
         result = None
-    return render(request, "repos.html", {"live_repos" :live_repos , "repo_list" : result })
+    return render(request, "repos.html", {"live_repos" :live_reposf , "repo_list" : result })
 
 def get_repos(username):
     print ("USERNAME" + username)
