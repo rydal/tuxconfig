@@ -12,9 +12,4 @@ from django_countries.widgets import CountrySelectWidget
 
 
 
-class RepositoryURLForm(forms.ModelForm):
-    class Meta:
-        model = RepoModel
-        fields = ('beta',)
-
 

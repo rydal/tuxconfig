@@ -18,7 +18,6 @@ class RepoModel(models.Model):
     downvotes = models.PositiveIntegerField(default=0)
     discussion_url = models.URLField(max_length=240,null=True,blank=True)
     signed_off = models.BooleanField(default=True)
-    beta = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     stars = models.PositiveIntegerField(default=0)
     module_name = models.CharField(max_length=40,null=True)

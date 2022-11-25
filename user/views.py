@@ -18,13 +18,11 @@ import ast
 from user.forms import DownloadedIdForm
 
 
-def check_device_exists(request,device_id,beta=None):
+def check_device_exists(request,device_id):
     if device_id is None:
         return JsonResponse({"error" : "device id not set"})
-    if beta is not None and beta == "true":
-        devices = Devices.objects.filter(device_id=device_id,beta=True).select_related()
-    else:
-        devices = Devices.objects.filter(device_id=device_id).select_related()
+
+    devices = Devices.objects.filter(device_id=device_id).select_related()
     repositories = []
     for device in devices:
          repositories.append(device.repo_model)

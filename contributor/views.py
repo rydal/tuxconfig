@@ -6,7 +6,6 @@ from django.contrib.auth.decorators import login_required
 from allauth.socialaccount.models import SocialAccount
 
 from tuxconfig_django import settings
-from .forms import RepositoryURLForm
 from .models import RepoModel, Devices
 from django.contrib import messages
 import  requests
@@ -14,7 +13,7 @@ from django.contrib.auth.decorators import user_passes_test
 from django.forms.models import modelformset_factory
 @login_required
 def profile(request):
-    RepoFormSet = modelformset_factory(RepoModel, form=RepositoryURLForm,extra=0,can_delete=0)
+
     if request.POST:
         if "add_repository" in request.POST:
             repo = request.POST['add_repository']
@@ -68,8 +67,7 @@ def profile(request):
         messages.error(request,"Cannot find you using auth.")
         live_repos = None
         result = None
-    repo_form_set = RepoFormSet(queryset=live_repos)
-    return render(request, "repos.html", {"live_repos" : repo_form_set , "repo_list" : result })
+    return render(request, "repos.html", {"live_repos" :live_repos , "repo_list" : result })
 
 def get_repos(username):
     print ("USERNAME" + username)
