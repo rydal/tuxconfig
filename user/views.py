@@ -37,8 +37,8 @@ def check_device_exists(request,device_id):
             resp = h.request(clone_url, 'HEAD')
             if int(resp[0]['status']) < 400:
                 repositories_available.append({"clone_url" : clone_url, "stars" : str(result.stars),"pk" : result.id })
-        else:
-            repositories_available.append({"clone_url" : result.clone_url, "stars" : str(result.stars),"pk" : result.id })
+            else:
+                repositories_available.append({"clone_url" : result.clone_url, "stars" : str(result.stars),"pk" : result.id })
     s = json.dumps(repositories_available)
     s = ast.literal_eval(s)
     return JsonResponse(s,safe=False)
