@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e309348-a1a2-41d9-90a6-aea7801a02c9" name="Changes" comment="removed github check when pulling">
+    <list default="true" id="4e309348-a1a2-41d9-90a6-aea7801a02c9" name="Changes" comment="url for get_device changed,">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/how_to_contribute.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/how_to_contribute.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/howitworks.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/howitworks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/inception.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/inception.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/install.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/install.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/landing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/privacy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tuxconfig.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tuxconfig.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +119,7 @@
       <workItem from="1667023565696" duration="2898000" />
       <workItem from="1667866026670" duration="1806000" />
       <workItem from="1667877324014" duration="246000" />
-      <workItem from="1669366878363" duration="8907000" />
+      <workItem from="1669366878363" duration="11191000" />
     </task>
     <task id="LOCAL-00001" summary="getting there :)">
       <created>1665633681390</created>
@@ -167,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669376068486</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="url for get_device changed,">
+      <created>1669379731199</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669379731199</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +222,7 @@
     <MESSAGE value="removed beta bit" />
     <MESSAGE value="jquery updated." />
     <MESSAGE value="removed github check when pulling" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed github check when pulling" />
+    <MESSAGE value="url for get_device changed," />
+    <option name="LAST_COMMIT_MESSAGE" value="url for get_device changed," />
   </component>
 </project>

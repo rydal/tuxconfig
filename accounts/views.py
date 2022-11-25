@@ -46,16 +46,16 @@ from django.urls import reverse
 def logout_user(request):
     if request.user.is_authenticated:
         logout(request)
-    return render(request,"index.html")
+    return render(request, "index.html")
 
 
 def privacy(request):
-    return render(request,"privacy.html")
+    return render(request, "privacy.html")
 
 def inception(request):
-    return render(request,"inception.html")
+    return render(request, "inception.html")
 def howitworks(request):
-    return render(request,"howitworks.html")
+    return render(request, "howitworks.html")
 def index(request):
     return render(request, "index.html")
 

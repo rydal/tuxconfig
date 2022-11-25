@@ -1,4 +1,4 @@
-{% extends "accounts/base.html" %} {% load crispy_forms_tags %}
+{% extends "base.html" %} {% load crispy_forms_tags %}
 
 
 {% block title %} Tuxconfig {% endblock %}
@@ -11,33 +11,35 @@
 {% block content %}
 
     <div class="card  rounded justify-content-center text-center  text-justify align-items-center  flex-column, btn-group-vertical m-1" >
-        <div class="card-title"><h4>What is this page / program about?</h4></div>
-        <div class="card-body">
+    <div class="card-title"><h4>What is this page / program about?</h4></div>
+    <div class="card-body">
 
-            <p>Tuxconfig is a system to automatically configure non supported devices in Linux</p>
-            <p>Coders can submit code for our systems, our developers then vet the code to ensure it is safe</p>
-            <br>
-            <p>The application then installs the code for you.</p>
-            <br>
-            <p>Not happy with the driver you have? You can try the next best version for you system</p>
-
-        </div>
+    <p>Tuxconfig is a system to automatically configure non supported devices in Linux</p>
+    <p>Coders can submit code for our systems, our developers then vet the code to ensure it is safe</p>
+    <br>
+    <p>The application then installs the code for you.</p>
+    <br>
+    <p>Not happy with the driver you have? You can try the next best version for you system</p>
+    <p>Developer or code vetter?</p>
+    <p>Login with Github to contribute repositories for users to install easily.</p>
+    <a href='{{ request.scheme }}://{{ request.get_host }}/social/github/login/?process=login'> <img src="{% static 'github.jpeg' %}" class="col-11 " alt="github"></a>
+    </div>
     </div>
 
     <div class="card  rounded justify-content-center text-center  text-justify align-items-center  flex-column, btn-group-vertical m-1" >
-        <div class="card-title"><h4>Who made this?</h4></div>
-        <div class="card-body">
-            <img src="https://rydalinc.com/s/me.jpeg" alt="me.jpeg" style="max-height: 20vh; text-align: center">
-            <br>
-            <p>I did, my business site is at:</p>
-            <a href="https://www.rydalinc.com"><img src="{%  static 'rydalinc_banner.png' %}"> <p>www.rydalinc.com</p></a>
+    <div class="card-title"><h4>Who made this?</h4></div>
+    <div class="card-body">
+    <img src="https://rydalinc.com/s/me.jpeg" alt="me.jpeg" style="max-height: 20vh; text-align: center">
+    <br>
+    <p>I did, my business site is at:</p>
+    <a href="https://www.rydalinc.com"><img src="{%  static 'rydalinc_banner.png' %}"> <p>www.rydalinc.com</p></a>
 
 
-            <br>
+    <br>
 
-            <a href="https://www.digitalocean.com/?refcode=8bb0b8ab74dd&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt="DigitalOcean Referral Badge" /></a>
-            <p>Give our server providers some love, and get &dollar;100 credit<3</p></A>
-        </div>
+      <a href="https://www.digitalocean.com/?refcode=8bb0b8ab74dd&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt="DigitalOcean Referral Badge" /></a>
+    <p>Give our server providers some love, and get &dollar;100 credit<3</p>
+    </div>
     </div>
     <div class="card  rounded justify-content-center text-center  text-justify align-items-center  flex-column, btn-group-vertical m-1" >
         <div class="card-title"><h4>What is this about?</h4></div>

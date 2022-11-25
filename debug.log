@@ -9399,3 +9399,84 @@ Traceback (most recent call last):
 TypeError: Cannot encode None for key 'client_id' in a query string. Did you mean to pass an empty string or omit the value?
 INFO:django.utils.autoreload:/mnt/hd/roberty/IdeaProjects/tuxconfig/accounts/urls.py changed, reloading.
 INFO:django.utils.autoreload:/mnt/hd/roberty/IdeaProjects/tuxconfig/tuxconfig_django/urls.py changed, reloading.
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/engine.py", line 129, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: accounts/base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/hd/roberty/IdeaProjects/tuxconfig/accounts/views.py", line 60, in index
+    return render(request, "index.html")
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: accounts/base.html
+ERROR:django.request:Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/engine.py", line 129, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: accounts/base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/hd/roberty/IdeaProjects/tuxconfig/accounts/views.py", line 60, in index
+    return render(request, "index.html")
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/home/roberty/.local/share/virtualenvs/tuxconfig-5x7VMW4I/lib/python3.9/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: accounts/base.html
+WARNING:django.request:Not Found: /favicon.ico
