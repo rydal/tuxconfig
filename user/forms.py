@@ -1,12 +1,13 @@
-from django import forms
 from captcha.fields import ReCaptchaField
+from django import forms
+
 from django.core.exceptions import ValidationError
 
 from .models import RequestedDeviceId, DownloadedDeviceId
 
 
 class RequestedIdForm(forms.ModelForm):
-    captcha = ReCaptchaField(widget=ReCaptchaField())
+    captcha = ReCaptchaField()
 
     class Meta:
         model = RequestedDeviceId
@@ -32,7 +33,7 @@ class RequestedIdForm(forms.ModelForm):
 
 
 class DownloadedIdForm(forms.ModelForm):
-    captcha = ReCaptchaField(widget=ReCaptchaField())
+    captcha = ReCaptchaField()
 
     class Meta:
         model = DownloadedDeviceId
