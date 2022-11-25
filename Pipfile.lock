@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "10220f978e238e4aeb6f53ce367b49bf8bc61e594f83260df4e5933a7335abd8"
+            "sha256": "7d508111ccd5b0ee6344e4076f74f8411396a4a1df2f3e96682a212878c94b7f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -48,7 +48,7 @@
                 "sha256:e9a51bbfe7e9802b5f3508687758b564069ba937748ad7b9e890086290d2f79e",
                 "sha256:fbdaec13c5105f0c4e5c52614d04f0bca5f5af007910daa8b6b12095edaa67b3"
             ],
-            "markers": "python_version >= '3.6'",
+            "index": "pypi",
             "version": "==4.0.1"
         },
         "beautifulsoup4": {
@@ -243,6 +243,14 @@
             "index": "pypi",
             "version": "==1.13.0"
         },
+        "django-recaptcha": {
+            "hashes": [
+                "sha256:1aed69fd6ac8fd9e99e52665392ae6748f8b6339ace656fad779fe0c6c915a52",
+                "sha256:253197051288923cae675d7eff91b619e3775311292a5dbaf27a8a55ffebc670"
+            ],
+            "index": "pypi",
+            "version": "==3.0.0"
+        },
         "django-stackoverflow": {
             "hashes": [
                 "sha256:9bcf1588111c32351daca0320148acef484fd12053c0d77200c93faa8887661d"
@@ -307,10 +315,11 @@
         },
         "paramiko": {
             "hashes": [
-                "sha256:376885c05c5d6aa6e1f4608aac2a6b5b0548b1add40274477324605903d9cd49",
-                "sha256:b2df1a6325f6996ef55a8789d0462f5b502ea83b3c990cbb5bbe57345c6812c4"
+                "sha256:003e6bee7c034c21fbb051bf83dc0a9ee4106204dd3c53054c71452cc4ec3938",
+                "sha256:655f25dc8baf763277b933dfcea101d636581df8d6b9774d1fb653426b72c270"
             ],
-            "version": "==2.12.0"
+            "index": "pypi",
+            "version": "==2.11.0"
         },
         "persisting-theory": {
             "hashes": [
@@ -468,7 +477,7 @@
                 "sha256:e61ceaab6f49fb8bdfaa0f92c4b57bcfbea54c09277b1b4f7ac376bfb7a7c174",
                 "sha256:f84fbc98b019fef2ee9a1cb3ce93e3187a6df0b2538a651bfb890254ba9f90b5"
             ],
-            "markers": "python_version >= '3.6'",
+            "index": "pypi",
             "version": "==6.0"
         },
         "requests": {

@@ -16,7 +16,6 @@ django-bootstrap==0.2.4
 django-bootstrap5==21.1
 django-countries==7.2.1
 django-crispy-forms==1.13.0
-django-recaptcha==3.0.0
 Django-stackoverflow==0.1.7
 gitdb==4.0.9
 GitPython==3.1.24
