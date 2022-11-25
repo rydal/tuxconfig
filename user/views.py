@@ -29,13 +29,16 @@ def check_device_exists(request,device_id):
     if len(repositories) == 0:
         return JsonResponse({'none' : True })
     repositories_available = []
-    for result in repositories:
-        clone_url = "https://github.com/" + result.git_username + "/"  + result.git_repo + "/commit/" + result.git_commit
-        h = httplib2.Http()
-        resp = h.request(clone_url, 'HEAD')
-        if int(resp[0]['status']) < 400:
-            repositories_available.append({"clone_url" : clone_url, "stars" : str(result.stars),"pk" : result.id })
 
+    for result in repositories:
+        if settings.CHECK_REPO_STILL_ON_GITHUB:
+            clone_url = "https://github.com/" + result.git_username + "/"  + result.git_repo + "/commit/" + result.git_commit
+            h = httplib2.Http()
+            resp = h.request(clone_url, 'HEAD')
+            if int(resp[0]['status']) < 400:
+                repositories_available.append({"clone_url" : clone_url, "stars" : str(result.stars),"pk" : result.id })
+        else:
+            repositories_available.append({"clone_url" : result.clone_url, "stars" : str(result.stars),"pk" : result.id })
     s = json.dumps(repositories_available)
     s = ast.literal_eval(s)
     return JsonResponse(s,safe=False)
