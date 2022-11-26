@@ -1,11 +1,14 @@
 import re
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 import urllib.request, json
 from django.contrib.auth.decorators import login_required
 from allauth.socialaccount.models import SocialAccount
+from django.views.generic import ListView
 
 from tuxconfig_django import settings
+from user.models import RequestedDeviceId
 from .models import RepoModel, Devices
 from django.contrib import messages
 import  requests
@@ -67,7 +70,7 @@ def profile(request):
         messages.error(request,"Cannot find you using auth.")
         live_repos = None
         result = None
-    return render(request, "repos.html", {"live_repos" :live_reposf , "repo_list" : result })
+    return render(request, "repos.html", {"live_repos" : live_repos , "repo_list" : result })
 
 def get_repos(username):
     print ("USERNAME" + username)
@@ -160,13 +163,15 @@ class Moduleconfig:
         self.version = version
         self.stars = stars
         self.redhat_dependencies = redhat_dependencies
-
-
-
-
-
-
-
     def getModule(self):
         return self
+
+class ShowRequestedDevices(LoginRequiredMixin,ListView):
+    model = RequestedDeviceId
+    template_name = "requested_devices.html"
+    context_object_name = "chipsets_requested"
+    def get_queryset(self):
+        requested_devices = RequestedDeviceId.objects.all().order_by("vote_count").values_list("device")
+        return requested_devices
+
 

@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% load crispy_forms_tags %}
+
+
+{% block title %} Tuxconfig - requested support {% endblock %}
+{%  load static %}
+
+
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+{%  block heading %} <h3>Chipsets requested</h3> {% endblock %}
+{% block content %}
+
+
+        <h4>Devices uploaded to our servers in search of a driver.</h4>
+        <table>
+            <tr>
+                <th>Device module name, and version</th>
+                <th>Vote count (so far)</th>
+            </tr>
+        {%  for repo in chipsets_requested %}
+            <tr>
+                <td>{{ repo.device.device_id }}</td>
+                <td>{{ repo.vote_count }}</td>
+            </tr>
+        {%  empty %}
+            <tr>
+                <td>None as yet!</td>
+            </tr>
+       {%  endfor %}
+        </table>
+
+
+{% endblock %}

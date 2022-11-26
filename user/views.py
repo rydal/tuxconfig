@@ -8,6 +8,7 @@ from django.shortcuts import render
 
 from django.db import models
 import requests
+from django.views.decorators.http import require_http_methods
 from urllib3 import request
 
 # Create your models here.
@@ -23,32 +24,7 @@ from user.forms import DownloadedIdForm
 from user.models import RequestedDeviceId
 
 
-def check_device_exists(request,device_id):
 
-    device_already, created = RequestedDeviceId.objects.update_or_create(device_id=device_id)
-    if device_already is not None and created is True:
-        device_already.vote_count = device_id.vote_count + 1
-        device_already.save()
-    devices = Devices.objects.filter(device_id=device_id).select_related()
-    repositories = []
-    for device in devices:
-         repositories.append(device.repo_model)
-    if len(repositories) == 0:
-        return JsonResponse({'none' : True })
-    repositories_available = []
-
-    for result in repositories:
-        if settings.CHECK_REPO_STILL_ON_GITHUB:
-            clone_url = "https://github.com/" + result.git_username + "/"  + result.git_repo + "/commit/" + result.git_commit
-            h = httplib2.Http()
-            resp = h.request(clone_url, 'HEAD')
-            if int(resp[0]['status']) < 400:
-                repositories_available.append({"clone_url" : clone_url, "stars" : str(result.stars),"pk" : result.id })
-        else:
-            repositories_available.append({"clone_url" : result.clone_url, "stars" : str(result.stars),"pk" : result.id })
-    s = json.dumps(repositories_available)
-    s = ast.literal_eval(s)
-    return JsonResponse(s,safe=False)
 
 
 
@@ -88,18 +64,41 @@ def get_client_ip(request):
         ip = request.META.get('REMOTE_ADDR')
     return ip
 
-def device_available(request):
-    if "recaptcha_token" not in request.POST:
+@require_http_methods(['POST'])
+def check_device_available(request):
+    if not settings.DEVELOPMENT_MODE and "recaptcha_token" not in request.POST:
         return JsonResponse({"error": "No recaptcha token sent"})
-    elif get_recaptcha_token(request.POST['recaptcha_token'],get_client_ip(request)) is False:
+    elif not settings.DEVELOPMENT_MODE and get_recaptcha_token(request.POST['recaptcha_token'],get_client_ip(request)) is False:
         return JsonResponse({"error": "Invalid recaptcha token sent"})
     if "devices_requested" not in request.POST:
         return JsonResponse({"error": "No device list sent"})
     else:
         device_string = request.POST['devices_requested']
         devices = json.loads(device_string)
-        device_result = []
-        if Devices.objects.filter(device_id__in=devices).exists():
-            for device in Devices.objects.filter(device_id__in=devices):
-                device_result.append(device.device_id.lower())
-        return JsonResponse({"result": json.dumps(device_result)})
+        repositories_available = []
+        for device in devices:
+            device_already, created = RequestedDeviceId.objects.update_or_create(device_id=device.id)
+            if device_already is not None and created is True:
+                device_already.vote_count = device.vote_count + 1
+                device_already.installed_already = device.installed_already
+                device_already.install_failed = device.install_failed
+                device_already.save()
+            devices = Devices.objects.filter(device_id=device.id).select_related()
+            repositories = []
+            for device in devices:
+                repositories.append(device.repo_model)
+                return JsonResponse({'none' : True })
+
+
+            for result in repositories:
+                if settings.CHECK_REPO_STILL_ON_GITHUB:
+                    clone_url = "https://github.com/" + result.git_username + "/"  + result.git_repo + "/commit/" + result.git_commit
+                    h = httplib2.Http()
+                    resp = h.request(clone_url, 'HEAD')
+                    if int(resp[0]['status']) < 400:
+                        repositories_available.append({"device_id" : device.id,"clone_url" : clone_url, "stars" : str(result.stars),"pk" : result.id })
+                else:
+                    repositories_available.append({"device_id" : device.id,"clone_url" : result.clone_url, "stars" : str(result.stars),"pk" : result.id })
+        s = json.dumps(repositories_available)
+        s = ast.literal_eval(s)
+        return JsonResponse(s,safe=False)

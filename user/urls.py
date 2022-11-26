@@ -8,8 +8,7 @@ app_name = "user"
 
 urlpatterns = [
     path('get_contributor/<int:repo_model>/', views.get_user_details, name='get_user_details'),
-    path('get_device/<str:device_id>', views.check_device_exists, name='check_device'),
-    path('get_device_available', views.check_device_available, name='device_available'),
+    path('get_device_available/', views.check_device_available, name='device_available'),
 
 
 ]

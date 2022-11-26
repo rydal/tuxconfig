@@ -14,8 +14,6 @@ class RepoModel(models.Model):
     git_repo = models.CharField(max_length=240)
     git_commit = models.CharField(max_length=240)
     git_username = models.CharField(max_length=240)
-    upvotes = models.PositiveIntegerField(default=0)
-    downvotes = models.PositiveIntegerField(default=0)
     discussion_url = models.URLField(max_length=240,null=True,blank=True)
     signed_off = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
