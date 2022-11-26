@@ -170,6 +170,7 @@ class ShowRequestedDevices(LoginRequiredMixin,ListView):
     model = RequestedDeviceId
     template_name = "requested_devices.html"
     context_object_name = "chipsets_requested"
+
     def get_queryset(self):
         requested_devices = RequestedDeviceId.objects.all().order_by("vote_count").values_list("device")
         return requested_devices
