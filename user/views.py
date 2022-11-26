@@ -21,11 +21,7 @@ import httplib2
 import ast
 
 from user.forms import DownloadedIdForm
-from user.models import RequestedDeviceId
-
-
-
-
+from user.models import RequestedDeviceId, MakeRequest
 
 
 def get_user_details(request,repo_model):
@@ -64,6 +60,7 @@ def get_client_ip(request):
         ip = request.META.get('REMOTE_ADDR')
     return ip
 
+from datetime import datetime, timedelta
 @require_http_methods(['POST'])
 def check_device_available(request):
     if not settings.DEVELOPMENT_MODE and "recaptcha_token" not in request.POST:
@@ -76,29 +73,33 @@ def check_device_available(request):
         device_string = request.POST['devices_requested']
         devices = json.loads(device_string)
         repositories_available = []
+        now = datetime.now()
+        now_minus_10 = now - timedelta(days = 1)
+
         for device in devices:
             device_already, created = RequestedDeviceId.objects.update_or_create(device_id=device.id)
-            if device_already is not None and created is True:
+            MakeRequest.objects.filter(ip=get_client_ip(request)).exists()
+            if device_already is not None and created is True and not MakeRequest.objects.filter(ip=get_client_ip(request),created__lte=now_minus_10).exists():
+                try:
+                    repo_exists = Devices.objects.get(device_id=device.id)
+                    device_already.device = repo_exists
+                except Devices.DoesNotExist:
+                    pass
                 device_already.vote_count = device.vote_count + 1
-                device_already.installed_already = device.installed_already
-                device_already.install_failed = device.install_failed
                 device_already.save()
-            devices = Devices.objects.filter(device_id=device.id).select_related()
-            repositories = []
-            for device in devices:
-                repositories.append(device.repo_model)
+            if not Devices.objects.filter(device_id__in=devices).select_related().exists():
                 return JsonResponse({'none' : True })
+            devices = Devices.objects.filter(device_id__in=devices).select_related()
 
-
-            for result in repositories:
-                if settings.CHECK_REPO_STILL_ON_GITHUB:
-                    clone_url = "https://github.com/" + result.git_username + "/"  + result.git_repo + "/commit/" + result.git_commit
-                    h = httplib2.Http()
-                    resp = h.request(clone_url, 'HEAD')
-                    if int(resp[0]['status']) < 400:
-                        repositories_available.append({"device_id" : device.id,"clone_url" : clone_url, "stars" : str(result.stars),"pk" : result.id })
-                else:
-                    repositories_available.append({"device_id" : device.id,"clone_url" : result.clone_url, "stars" : str(result.stars),"pk" : result.id })
+        for device in devices:
+            if settings.CHECK_REPO_STILL_ON_GITHUB:
+                clone_url = "https://github.com/" + device.repo_model.git_username + "/"  + device.repo_model.git_repo + "/commit/" + device.repo_model.git_commit
+                h = httplib2.Http()
+                resp = h.request(clone_url, 'HEAD')
+                if int(resp[0]['status']) < 400:
+                    repositories_available.append({"device_id" : device.id,"clone_url" : clone_url, "stars" : str(device.repo_model.stars),"pk" : device.repo_model.id })
+            else:
+                repositories_available.append({"device_id" : device.id,"clone_url" : device.repo_model.clone_url, "stars" : str(device.repo_model.stars),"pk" : device.repo_model.id })
         s = json.dumps(repositories_available)
         s = ast.literal_eval(s)
         return JsonResponse(s,safe=False)

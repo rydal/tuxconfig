@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e309348-a1a2-41d9-90a6-aea7801a02c9" name="Changes" comment="url for get_device changed,">
-      <change afterPath="$PROJECT_DIR$/contributor/templates/requested_devices.html" afterDir="false" />
+    <list default="true" id="4e309348-a1a2-41d9-90a6-aea7801a02c9" name="Changes" comment="sending array to server for devices.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contributor/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/contributor/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contributor/templates/repos.html" beforeDir="false" afterPath="$PROJECT_DIR$/contributor/templates/repos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contributor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/contributor/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contributor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/contributor/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +111,7 @@
       <workItem from="1667023565696" duration="2898000" />
       <workItem from="1667866026670" duration="1806000" />
       <workItem from="1667877324014" duration="246000" />
-      <workItem from="1669366878363" duration="20944000" />
+      <workItem from="1669366878363" duration="21653000" />
     </task>
     <task id="LOCAL-00001" summary="getting there :)">
       <created>1665633681390</created>
@@ -182,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669379731199</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="sending array to server for devices.">
+      <created>1669426721822</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669426721822</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +222,7 @@
     <MESSAGE value="jquery updated." />
     <MESSAGE value="removed github check when pulling" />
     <MESSAGE value="url for get_device changed," />
-    <option name="LAST_COMMIT_MESSAGE" value="url for get_device changed," />
+    <MESSAGE value="sending array to server for devices." />
+    <option name="LAST_COMMIT_MESSAGE" value="sending array to server for devices." />
   </component>
 </project>
